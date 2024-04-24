@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:08:12 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/21 13:31:44 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:22:32 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/parsing.h"
+#include "parsing.h"
 
 // Function that checks if the .cub file is in the right format
 

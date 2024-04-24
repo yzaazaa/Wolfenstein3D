@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 01:45:41 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 01:45:32 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:24:05 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/utils.h"
+#include "utils.h"
 
 static int	check_sign(const char *str, int *i)
 {

@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 01:01:23 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 01:45:47 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:24:05 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/utils.h"
+#include "utils.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

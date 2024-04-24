@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 01:15:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 01:45:39 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:24:05 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/utils.h"
+#include "utils.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

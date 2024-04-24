@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:26:13 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 02:26:34 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:22:24 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/parsing.h"
+#include "parsing.h"
 
 // Function that checks if the char is the character's spawn orientation
 

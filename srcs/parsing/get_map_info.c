@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:29:13 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/21 13:30:12 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:22:32 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/parsing.h"
+#include "parsing.h"
 
 // Function that checks if the first line is full of
 // 1s, 0s, player_spawn or spaces

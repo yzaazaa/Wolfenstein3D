@@ -6,13 +6,13 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 14:15:48 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/21 14:23:57 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:24:05 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/list.h"
-#include "../../includes/error.h"
-#include "../../includes/utils.h"
+#include "list.h"
+#include "error.h"
+#include "utils.h"
 
 char	**list_to_array(t_list *list)
 {

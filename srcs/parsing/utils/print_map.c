@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 01:50:36 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/21 13:22:53 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:22:24 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/parsing.h"
+#include "parsing.h"
 
 //	Function that prints map content
 

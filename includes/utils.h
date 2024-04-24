@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 21:25:53 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 04:23:19 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:22:04 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int		is_empty_line(char *str);
 int		get_r(int rgb);
 int		get_g(int rgb);
 int		get_b(int rgb);
+void	free_array(char **array);
 
 #endif

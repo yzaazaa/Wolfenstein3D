@@ -6,13 +6,13 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 04:23:54 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:24:05 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/list.h"
-#include "../../includes/error.h"
-#include "../../includes/utils.h"
+#include "list.h"
+#include "error.h"
+#include "utils.h"
 
 // Function that returns a new list given a generic data
 

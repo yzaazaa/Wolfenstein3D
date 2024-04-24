@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:15:47 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 04:24:01 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:22:32 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/parsing.h"
+#include "parsing.h"
 
 // Function that check the file name
 

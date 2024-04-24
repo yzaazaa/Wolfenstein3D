@@ -6,11 +6,11 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:41:53 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/21 14:15:37 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/24 17:22:32 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/parsing.h"
+#include "parsing.h"
 
 // Function that inits the map struct
 
