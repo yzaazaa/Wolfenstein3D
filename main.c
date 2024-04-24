@@ -17,10 +17,7 @@ int	main(int ac, char **av)
 	t_map	*map;
 
 	if (ac != 2)
-	{
 		puterr(INVALID_ARG);
-		return (1);
-	}
 	map = parse_map(av[1]);
 	print_map_content(map);
 	free_map(map);
