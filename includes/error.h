@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/09 03:02:38 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 17:11:31 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,9 @@
 # define TOP_EDGE "Player or 0 on top edge!\n"
 # define BOTTOM_EDGE "Player or 0 on bottom edge!\n"
 # define CHAR_UNEXPECTED "Character unexpected in map!\n"
+# define MLX_ERR "Failed to initialize connection!\n"
+# define MLX_WINDOW_ERR "Failed to create window!\n"
+# define MLX_IMAGE_ERR "Failed to create new image!\n"
+# define MLX_IMAGE_DATA_ERR "Failed to get image data!\n"
 
 #endif
