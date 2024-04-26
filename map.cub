@@ -1,7 +1,7 @@
-NO ./test
-SO ./test
-WE ./test
-EA ./test
+NO ./texture
+SO ./texture
+WE ./texture
+EA ./texture
 
 F 220,100,0
 C 225,30,0
