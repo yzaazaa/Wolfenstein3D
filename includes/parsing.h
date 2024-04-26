@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:50 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/21 14:15:05 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 03:47:52 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,19 @@
 # include "utils.h"
 # include "../srcs/gnl/get_next_line.h"
 # include <fcntl.h>
+# include "cub3d.h"
 
+typedef struct s_color
+{
+	int	r;
+	int	g;
+	int	b;
+}	t_color;
 typedef struct s_map
 {
 	t_list	*map_content;
 	char	**map2d;
 	char	spawn_orientation;
-	int		pos_x;
-	int		pos_y;
 	int		max_x;
 	int		max_y;
 	char	*north_texture;
