@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 10:34:07 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 16:59:13 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,20 @@
 #	define KEY_LEFT 123
 #	define KEY_RIGHT 124
 
+typedef struct s_image
+{
+	void	*ptr;
+	char	*pixels;
+	int		bpp;
+	int		endian;
+	int		line_len;
+}				t_image;
 
 typedef struct s_datas
 {
 	void		*mlx;
 	void		*mlx_win;
+	t_image		image;
 	t_map		*map;
 	int		right_key_presed;
 	int		left_key_pressed;
