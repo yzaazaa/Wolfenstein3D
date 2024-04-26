@@ -6,11 +6,12 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 17:12:15 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 17:45:35 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include <math.h>
 
 void	ft_free(t_datas *data, char *msg)
 {
@@ -27,6 +28,21 @@ int	ft_close_win(t_datas *data)
 	return (0);
 }
 
+static void	init_rot_angle(t_datas *data)
+{
+	char	angle;
+
+	angle = data->map->spawn_orientation;
+	if (angle == 'N')
+		data->rote_angle = M_PI_2;
+	else if (angle == 'E')
+		data->rote_angle = 0;
+	else if (angle == 'W')
+		data->rote_angle = M_PI;
+	else if (angle == 'S')
+		data->rote_angle = (M_PI / 4) + (2 * M_PI / 4);
+}
+
 void	init_game(t_datas *game)
 {
 	game->mlx = mlx_init();
@@ -35,8 +51,10 @@ void	init_game(t_datas *game)
 	game->screen_h = 1024;
 	game->screen_w = 1024;
 	game->x = 0;
-	game->pos_x = 0;
-	game->pos_y = 0;
+	game->pos_x = game->map->pos_x * TILE_SIZE + TILE_SIZE / 2;
+	game->pos_y = game->map->pos_y * TILE_SIZE + TILE_SIZE / 2;
+	init_rot_angle(game);
+	game->fov_rd = FOV * M_PI / 180;
 	game->mlx_win = mlx_new_window(game->mlx,
 			game->screen_w, game->screen_h, "cub3D");
 	if (!game->mlx_win)

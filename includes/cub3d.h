@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 16:59:13 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 17:44:58 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 #	define ESC_KEY 53
 #	define KEY_LEFT 123
 #	define KEY_RIGHT 124
+#	define TILE_SIZE 30
+#	define FOV 60
 
 typedef struct s_image
 {
@@ -89,8 +91,7 @@ typedef struct s_datas
 	int			move_left;
 	int			move_up;
 	int			move_down;
-
-	
+	int			fov_rd;
 } t_datas;
 
 int		ft_close_win(t_datas *data);
