@@ -6,7 +6,7 @@
 /*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:50 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/26 03:47:52 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/04/26 05:46:13 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@
 # include <fcntl.h>
 # include "cub3d.h"
 
-typedef struct s_color
-{
-	int	r;
-	int	g;
-	int	b;
-}	t_color;
 typedef struct s_map
 {
 	t_list	*map_content;

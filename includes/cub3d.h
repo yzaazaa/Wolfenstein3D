@@ -6,7 +6,7 @@
 /*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 05:19:04 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/04/26 05:56:54 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,35 @@ typedef struct s_datas
 	int			draw_start;
 	int			draw_end;
 	int			line_height;
+	double		movespeed;
+	double		rote_angle;
+	int			rot_right;
+	int			rot_left;
+	int			move_right;
+	int			move_left;
+	int			move_up;
+	int			move_down;
 
 	
 } t_datas;
 
-int ft_close_win(t_datas *data);
-void ft_free(t_datas *data, char *msg);
+int		ft_close_win(t_datas *data);
+void		ft_free(t_datas *data, char *msg);
 
 /*--------- KEY HOOK FUNCTIONS -------*/
-int key_pressed(int key, t_datas *data);
-int key_released(int key, t_datas *data);
+int		key_pressed(int key, t_datas *data);
+int		key_released(int key, t_datas *data);
 
 /*------ raycasting fucntions -----*/
 void		init_ray_distance(t_datas *data);
 void		raycasting(t_datas *data);
 void		calc_wall_height(t_datas *data);
 
+/*-------- player movements -------*/
+void		move_forword(t_datas *game);
+void		move_backword(t_datas *game);
+void		move_left(t_datas *game);
+void		move_right(t_datas *game);
+void		rotate(t_datas *game, double angle);
 
 #endif
