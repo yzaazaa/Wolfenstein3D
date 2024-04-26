@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:21:27 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/24 17:21:52 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 10:45:18 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	free_array(char **array)
 {
-    int	i;
+	int	i;
 
-    i = -1;
-    while (array[++i])
-        free(array[i]);
-    free(array);
+	i = -1;
+	while (array[++i])
+		free(array[i]);
+	free(array);
 }

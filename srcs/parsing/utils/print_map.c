@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 01:50:36 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/24 17:22:24 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 10:40:45 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	print_map_content(t_map *map)
 	if (map->east_texture)
 		printf("east texture: %s\n", map->east_texture);
 	if (map->pos_x != -1)
-		printf("player x position: %d\n", map->pos_x);
+		printf("player x position: %f\n", map->pos_x);
 	if (map->pos_y != -1)
-		printf("player y position: %d\n", map->pos_y);
+		printf("player y position: %f\n", map->pos_y);
 	if (map->max_x != -1)
 		printf("max x: %d\n", map->max_x);
 	if (map->max_y != -1)

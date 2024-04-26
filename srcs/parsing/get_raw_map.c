@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:17:42 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/24 17:30:27 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/26 10:43:41 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_list	*get_raw_map(char *cub_file)
 
 	raw_map = NULL;
 	cub_fd = open(cub_file, O_RDONLY);
-	// if (cub_fd == -1)
+	if (cub_fd == -1)
 		puterr(OPEN_ERR);
 	line = get_next_line(cub_fd);
 	while (line)

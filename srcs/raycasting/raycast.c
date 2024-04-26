@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 03:31:48 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:50:07 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3d.h"
+#include "cub3d.h"
 
 //calculate step and initial sideDist
 void	calc_side_dist_step(t_datas *data)
@@ -35,7 +35,6 @@ void	calc_side_dist_step(t_datas *data)
 		data->y_step = 1;
 		data->side_y_dist = (data->map_y + 1.0 - data->pos_y) * data->delta_y_dist;
 	}
-	
 }
 
 void	init_ray_distance(t_datas *data)
@@ -69,12 +68,13 @@ void	raycasting(t_datas *data)
 			data->map_x += data->x_step;
 			data->side = 0;
 		}
-		else{
+		else
+		{
 			data->side_y_dist += data->delta_y_dist;
 			data->map_y += data->y_step;
 			data->side = 1;
 		}
-		if (data->map.map2d[data->map_x][data->map_y] == '1')
+		if (data->map->map2d[data->map_x][data->map_y] == '1')
 			data->hit_wall = 1;
 	}
 	//Calculate distance projected on camera direction (Euclidean)

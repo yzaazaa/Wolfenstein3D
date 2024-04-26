@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 05:56:54 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:34:07 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_datas
 {
 	void		*mlx;
 	void		*mlx_win;
-	t_map		map;
+	t_map		*map;
 	int		right_key_presed;
 	int		left_key_pressed;
 	int		w_key_pressed;
@@ -85,22 +85,23 @@ typedef struct s_datas
 } t_datas;
 
 int		ft_close_win(t_datas *data);
-void		ft_free(t_datas *data, char *msg);
+void	ft_free(t_datas *data, char *msg);
+int		launch_game(t_datas *data);
 
 /*--------- KEY HOOK FUNCTIONS -------*/
 int		key_pressed(int key, t_datas *data);
 int		key_released(int key, t_datas *data);
 
 /*------ raycasting fucntions -----*/
-void		init_ray_distance(t_datas *data);
-void		raycasting(t_datas *data);
-void		calc_wall_height(t_datas *data);
+void	init_ray_distance(t_datas *data);
+void	raycasting(t_datas *data);
+void	calc_wall_height(t_datas *data);
 
 /*-------- player movements -------*/
-void		move_forword(t_datas *game);
-void		move_backword(t_datas *game);
-void		move_left(t_datas *game);
-void		move_right(t_datas *game);
-void		rotate(t_datas *game, double angle);
+void	move_forword(t_datas *game);
+void	move_backword(t_datas *game);
+void	move_left(t_datas *game);
+void	move_right(t_datas *game);
+void	rotate(t_datas *game, double angle);
 
 #endif
