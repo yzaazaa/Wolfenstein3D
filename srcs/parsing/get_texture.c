@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_texture.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/27 17:00:15 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/27 18:17:29 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*get_texture(t_map *map, char *line)
 	int			j;
 
 	i = 2;
+	if (map == NULL)
+		puterr(MALLOC_ERR);
 	while (!(line[i] > ' ' && line[i] < 127))
 		i++;
 	len = 0;
