@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:54:55 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/27 01:18:52 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:03:52 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ void	update_game(t_datas *game)
 		move_right(game);
 	else if (game->move_left == 1)
 		move_left(game);
-	mlx_clear_window(game->mlx, game->mlx_win);
 	game->x = 0;
-	launch_game(game);
 }
 
 int	key_pressed(int key, t_datas *data)
@@ -49,7 +47,6 @@ int	key_pressed(int key, t_datas *data)
 		data->right_key_presed = 1;
 	else
 		return (1);
-	update_game(data);
 	return (0);
 }
 

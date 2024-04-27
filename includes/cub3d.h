@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/27 19:37:06 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/04/27 21:04:32 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@
 typedef struct s_image
 {
 	void	*ptr;
-	char	*pixels;
+	int		*pixels;
 	int		bpp;
 	int		endian;
 	int		line_len;
-	int		*arr;
 }				t_image;
 
 typedef struct s_textures
@@ -107,6 +106,7 @@ typedef struct s_datas
 int		ft_close_win(t_datas *data);
 void	ft_free(t_datas *data, char *msg);
 int		launch_game(t_datas *data);
+void	update_game(t_datas *game);
 
 /*--------- KEY HOOK FUNCTIONS -------*/
 int		key_pressed(int key, t_datas *data);
