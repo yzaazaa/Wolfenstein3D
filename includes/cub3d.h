@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/27 17:06:27 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/27 19:37:06 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_image
 	int		bpp;
 	int		endian;
 	int		line_len;
+	int		*arr;
 }				t_image;
 
 typedef struct s_textures
@@ -122,5 +123,7 @@ void	move_backword(t_datas *game);
 void	move_left(t_datas *game);
 void	move_right(t_datas *game);
 void	rotate(t_datas *game, double angle);
+
+void	draw_floor_ceiling(t_datas *game);
 
 #endif
