@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/27 17:21:13 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/27 19:45:13 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	init_game(t_datas *game)
 		puterr_close_win(game, MLX_IMAGE_DATA_ERR);
 }
 
-void	render(t_datas *game)
+int	render(t_datas *game)
 {
 	int	i;
 
@@ -108,18 +108,21 @@ void	render(t_datas *game)
 	mlx_clear_window(game->mlx, game->mlx_win);
 	while (i < game->screen_w)
 	{
+		init_ray_distance(game);
 		raycasting(game);
 		calc_wall_height(game);
-		draw_wall(game);
+		//draw_wall(game);
+		draw_floor_ceiling(game);
 		i++;
 	}
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.ptr, 0, 0);
+	return (0);
 }
 
 int	launch_game(t_datas *data)
 {
 	init_game(data);
 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->image.ptr, 0, 0);
-	//draw(&data);
 	mlx_hook(data->mlx_win, WIN_CLOSE, 0, ft_close_win, data);
 	mlx_hook(data->mlx_win, 2, 0, &key_pressed, data);
 	mlx_hook(data->mlx_win, 3, 0, &key_released, data);
