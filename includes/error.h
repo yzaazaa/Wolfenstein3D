@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/26 17:11:31 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:03:21 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@
 # define MLX_WINDOW_ERR "Failed to create window!\n"
 # define MLX_IMAGE_ERR "Failed to create new image!\n"
 # define MLX_IMAGE_DATA_ERR "Failed to get image data!\n"
+# define CONVERT_XPM_ERR "Couldn't convert xpm file to image!\n"
 
 #endif

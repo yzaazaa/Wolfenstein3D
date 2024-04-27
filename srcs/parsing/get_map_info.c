@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_info.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:29:13 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/24 17:22:32 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/27 16:52:16 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,16 @@ static int	check_line(t_map *map, char *line)
 		map->ceiling_color = get_color(line);
 	else if (map->north_texture == NULL
 		&& line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
-		map->north_texture = get_texture(line);
+		map->north_texture = get_texture(map, line);
 	else if (map->west_texture == NULL
 		&& line[0] == 'W' && line[1] == 'E' && line[2] == ' ')
-		map->west_texture = get_texture(line);
+		map->west_texture = get_texture(map, line);
 	else if (map->south_texture == NULL
 		&& line[0] == 'S' && line[1] == 'O' && line[2] == ' ')
-		map->south_texture = get_texture(line);
+		map->south_texture = get_texture(map, line);
 	else if (map->east_texture == NULL
 		&& line[0] == 'E' && line[1] == 'A' && line[2] == ' ')
-		map->east_texture = get_texture(line);
+		map->east_texture = get_texture(map, line);
 	else if (map->ceiling_color != -1 && map->floor_color != -1
 		&& map->east_texture && map->north_texture
 		&& map->south_texture && map->west_texture && check_first_line(line))

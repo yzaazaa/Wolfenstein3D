@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_texture.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/24 17:22:32 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:00:15 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+#include <mlx.h>
 
 // Function that checks the path to texture
 
@@ -21,18 +22,17 @@ static void	check_path(char *texture)
 	fd = open(texture, O_RDONLY);
 	if (fd == -1)
 		puterr(OPEN_ERR);
-	else
-		close(fd);
+	close(fd);
 }
 
 // Function that gets path to texture
 
-char	*get_texture(char *line)
+char	*get_texture(t_map *map, char *line)
 {
-	char	*texture;
-	int		i;
-	int		len;
-	int		j;
+	char		*texture;
+	int			i;
+	int			len;
+	int			j;
 
 	i = 2;
 	while (!(line[i] > ' ' && line[i] < 127))

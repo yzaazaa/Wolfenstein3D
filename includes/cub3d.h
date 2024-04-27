@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 17:44:58 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:06:27 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,21 @@ typedef struct s_image
 	int		line_len;
 }				t_image;
 
+typedef struct s_textures
+{
+	char	*north;
+	char	*south;
+	char	*east;
+	char	*west;
+}				t_textures;
+
 typedef struct s_datas
 {
 	void		*mlx;
 	void		*mlx_win;
 	t_image		image;
 	t_map		*map;
+	t_textures	textures;
 	int		right_key_presed;
 	int		left_key_pressed;
 	int		w_key_pressed;
