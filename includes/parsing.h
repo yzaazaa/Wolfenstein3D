@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:50 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/27 17:00:31 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/29 17:45:50 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,30 @@
 # include "../srcs/gnl/get_next_line.h"
 # include <fcntl.h>
 
+typedef struct s_vector
+{
+	int x;
+	int y;
+} t_vector;
+
 typedef struct s_map
 {
 	t_list				*map_content;
 	char				**map2d;
 	char				spawn_orientation;
-	double				pos_x;
-	double				pos_y;
-	int					max_x;
-	int					max_y;
 	char				*north_texture;
 	char				*south_texture;
 	char				*west_texture;
 	char				*east_texture;
+	int					row;
+	int					col;
+	int					max_y;
+	int					max_x;
+	t_vector			player;
 	int					floor_color;
-	int					ceiling_color;
+	int					ceilling_color;
+	char				*filename;
+	char				starting_pos;
 }				t_map;
 
 

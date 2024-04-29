@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/27 21:04:32 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/29 17:33:49 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,22 @@
 #	include <math.h>
 #	include <string.h>
 
-#	define KEY_A 0
-#	define KEY_S 1
-#	define KEY_D 2
-#	define KEY_W 13
-#	define WIN_CLOSE 17
+#	define EQUAL 0
+
+#	define RIGHT_M 2
+#	define LEFT_M 0
+#	define DOWN_M 1
+#	define UP_M 13
+#	define RIGHT_R 124
+#	define LEFT_R 123
 #	define ESC_KEY 53
-#	define KEY_LEFT 123
-#	define KEY_RIGHT 124
+#	define WIN_CLOSE 17
 #	define TILE_SIZE 30
 #	define FOV 60
+
+#	define FLOOR "F"
+#	define CEILLING "C"
+
 
 typedef struct s_image
 {
@@ -52,17 +58,10 @@ typedef struct s_datas
 {
 	void		*mlx;
 	void		*mlx_win;
+	char		**cub_content;
 	t_image		image;
-	t_map		*map;
+	t_map		map;
 	t_textures	textures;
-	int		right_key_presed;
-	int		left_key_pressed;
-	int		w_key_pressed;
-	int		s_key_pressed;
-	int		a_key_pressed;
-	int		d_key_pressed;
-
-
 
 	int		x;
 	int		screen_h;
@@ -103,19 +102,30 @@ typedef struct s_datas
 	int			fov_rd;
 } t_datas;
 
+/* ---- Init Functions ---- */
+void	init_maps(t_map *map);
+void	init_game(t_datas *game);
+void	start_game(t_datas *game);
+
 int		ft_close_win(t_datas *data);
 void	ft_free(t_datas *data, char *msg);
-int		launch_game(t_datas *data);
-void	update_game(t_datas *game);
+
+void	ft_new_window(t_datas *game);
+int		rgb_to_int(int color);
+
+int		launch_game(void *ptr);
 
 /*--------- KEY HOOK FUNCTIONS -------*/
 int		key_pressed(int key, t_datas *data);
 int		key_released(int key, t_datas *data);
+void	moves(t_datas *game);
 
 /*------ raycasting fucntions -----*/
 void	init_ray_distance(t_datas *data);
 void	raycasting(t_datas *data);
 void	calc_wall_height(t_datas *data);
+void	drawing(t_datas *game);
+void	draw_floor_ceiling(t_datas *game);
 
 /*-------- player movements -------*/
 void	move_forword(t_datas *game);
@@ -124,6 +134,5 @@ void	move_left(t_datas *game);
 void	move_right(t_datas *game);
 void	rotate(t_datas *game, double angle);
 
-void	draw_floor_ceiling(t_datas *game);
 
 #endif
