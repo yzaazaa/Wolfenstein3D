@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:41:53 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/27 17:00:57 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/29 16:42:43 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ static void	init_map(t_map *map)
 	map->south_texture = NULL;
 	map->west_texture = NULL;
 	map->east_texture = NULL;
-	map->floor_color = -1;
-	map->ceiling_color = -1;
-	map->pos_x = -1;
-	map->pos_y = -1;
-	map->max_x = -1;
-	map->max_y = -1;
 }
 
 // Function that removes all info lines from the .cub file

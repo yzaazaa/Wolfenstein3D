@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_info.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:29:13 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/27 16:52:16 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/29 17:29:36 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static int	check_line(t_map *map, char *line)
 {
 	if (map->floor_color == -1 && line[0] == 'F' && line[1] == ' ')
 		map->floor_color = get_color(line);
-	else if (map->ceiling_color == -1 && line[0] == 'C' && line[1] == ' ')
-		map->ceiling_color = get_color(line);
+	else if (map->ceilling_color == -1 && line[0] == 'C' && line[1] == ' ')
+		map->ceilling_color = get_color(line);
 	else if (map->north_texture == NULL
 		&& line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
 		map->north_texture = get_texture(map, line);
@@ -48,7 +48,7 @@ static int	check_line(t_map *map, char *line)
 	else if (map->east_texture == NULL
 		&& line[0] == 'E' && line[1] == 'A' && line[2] == ' ')
 		map->east_texture = get_texture(map, line);
-	else if (map->ceiling_color != -1 && map->floor_color != -1
+	else if (map->ceilling_color != -1 && map->floor_color != -1
 		&& map->east_texture && map->north_texture
 		&& map->south_texture && map->west_texture && check_first_line(line))
 		return (0);
@@ -59,7 +59,7 @@ static int	check_line(t_map *map, char *line)
 
 static int	check_all_set(t_map *map, char *str, t_node *head)
 {
-	if (map->ceiling_color != -1 && map->floor_color != -1
+	if (map->ceilling_color != -1 && map->floor_color != -1
 		&& map->east_texture && map->north_texture
 		&& map->south_texture && map->west_texture && check_first_line(str))
 		return (1);
