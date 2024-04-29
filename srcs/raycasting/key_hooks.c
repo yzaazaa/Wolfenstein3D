@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:54:55 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/27 21:03:52 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/29 16:14:15 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-void	update_game(t_datas *game)
+void	moves(t_datas *game)
 {
+	mlx_destroy_image(game->mlx, game->image.ptr);
+	game->image.ptr = mlx_new_image(game->mlx, game->screen_w, game->screen_h);
 	if (game->rot_right == 1)
 		rotate(game, -(game->rote_angle));
 	else if (game->rot_left == 1)
@@ -26,43 +28,46 @@ void	update_game(t_datas *game)
 		move_right(game);
 	else if (game->move_left == 1)
 		move_left(game);
+	mlx_clear_window(game->mlx, game->mlx_win);
 	game->x = 0;
+	launch_game(game);
 }
 
-int	key_pressed(int key, t_datas *data)
+int	key_pressed(int key, t_datas *game_ptr)
 {
-	if (key == ESC_KEY)
-		ft_close_win(data);
-	else if (key == KEY_W)
-		data->w_key_pressed = 1;
-	else if (key == KEY_S)
-		data->s_key_pressed = 1;
-	else if (key == KEY_A)
-		data->a_key_pressed = 1;
-	else if (key == KEY_D)
-		data->d_key_pressed = 1;
-	else if (key == KEY_LEFT)
-		data->left_key_pressed = 1;
-	else if (key == KEY_RIGHT)
-		data->right_key_presed = 1;
+	if (key == RIGHT_R)
+		game_ptr->rot_right = 1;
+	else if (key == LEFT_R)
+		game_ptr->rot_left = 1;
+	else if (key == UP_M)
+		game_ptr->move_up = 1;
+	else if (key == DOWN_M)
+		game_ptr->move_down = 1;
+	else if (key == RIGHT_M)
+		game_ptr->move_right = 1;
+	else if (key == LEFT_M)
+		game_ptr->move_left = 1;
+	else if (key == ESC_KEY)
+		ft_close_win(game_ptr);
 	else
 		return (1);
+	moves(game_ptr);
 	return (0);
 }
 
-int	key_released(int key, t_datas *data)
+int	key_released(int key, t_datas *game_ptr)
 {
-	if (key == KEY_W)
-		data->w_key_pressed = 0;
-	else if (key == KEY_S)
-		data->s_key_pressed = 0;
-	else if (key == KEY_A)
-		data->a_key_pressed = 0;
-	else if (key == KEY_D)
-		data->d_key_pressed = 0;
-	else if (key == KEY_LEFT)
-		data->left_key_pressed = 0;
-	else if (key == KEY_RIGHT)
-		data->right_key_presed = 0;
+	if (key == RIGHT_R)
+		game_ptr->rot_right = 0;
+	else if (key == LEFT_R)
+		game_ptr->rot_left = 0;
+	else if (key == UP_M)
+		game_ptr->move_up = 0;
+	else if (key == DOWN_M)
+		game_ptr->move_down = 0;
+	else if (key == RIGHT_M)
+		game_ptr->move_right = 0;
+	else if (key == LEFT_M)
+		game_ptr->move_left = 0;
 	return (0);
 }

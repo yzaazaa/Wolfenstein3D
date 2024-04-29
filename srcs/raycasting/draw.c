@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/27 21:11:41 by Razog            ###   ########.fr       */
+/*   Updated: 2024/04/29 17:46:53 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,30 @@ int rgb_to_int(int color)
     
     return ((r << 16) | (g << 8) | b);
 }
+
 void	draw_floor_ceiling(t_datas *game)
 {
 	int	i;
 
-	i = 0;
-	while (i < game->draw_start)
-		game->image.pixels[i++ * game->screen_w + game->x] = \
-		rgb_to_int(game->map->ceiling_color);
-	while (i < game->draw_end)
-		game->image.pixels[i++ * game->screen_w + game->x] = \
-		rgb_to_int(0xFF0000);
-	while (i < game->screen_h)
-		game->image.pixels[i++ * game->screen_w + game->x] = \
-		rgb_to_int(game->map->floor_color);
+	i = -1;
+	while (++i < game->draw_start)
+		game->image.pixels[i * game->screen_w + game->x] = \
+		rgb_to_int(game->map.ceilling_color);
+	i = game->draw_end;
+	while (++i < game->screen_h)
+		game->image.pixels[i * game->screen_w + game->x] = \
+		rgb_to_int(game->map.floor_color);
+}
+
+void	drawing(t_datas *game)
+{
+	while (game->x < game->screen_w)
+	{
+		init_ray_distance(game);
+		raycasting(game);
+		calc_wall_height(game);
+		draw_floor_ceiling(game);
+		game->x++;
+	}
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.ptr, 0, 0);
 }

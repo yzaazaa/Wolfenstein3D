@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/26 10:50:07 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/04/29 16:17:27 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	raycasting(t_datas *data)
 			data->map_y += data->y_step;
 			data->side = 1;
 		}
-		if (data->map->map2d[data->map_x][data->map_y] == '1')
+		if (data->map.map2d[data->map_x][data->map_y] == '1')
 			data->hit_wall = 1;
 	}
 	//Calculate distance projected on camera direction (Euclidean)
@@ -100,4 +100,14 @@ void	calc_wall_height(t_datas *data)
 	data->draw_end = data->line_height / 2 + data->screen_h / 2;
 	if (data->draw_end >= data->screen_h)
 		data->draw_end = data->screen_h - 1;
+}
+
+int	launch_game(void *ptr)
+{
+	t_datas *game;
+
+	game = ptr;
+	mlx_clear_window(game->mlx, game->mlx_win);
+	drawing(game);
+	return(0);
 }
