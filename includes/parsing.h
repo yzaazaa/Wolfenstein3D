@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:50 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/29 17:45:50 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:29:02 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,10 @@ typedef struct s_map
 	char				*east_texture;
 	int					row;
 	int					col;
-	int					max_y;
-	int					max_x;
 	t_vector			player;
 	int					floor_color;
 	int					ceilling_color;
 	char				*filename;
-	char				starting_pos;
 }				t_map;
 
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/29 17:37:27 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:38:56 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_free(t_datas *data, char *msg)
 	mlx_destroy_image(data->mlx, data->image.ptr);
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	printf("%s", msg);
-	free_map(&data->map);
+	free_map(data->map);
 	free(data);
 	exit(EXIT_SUCCESS);
 }
@@ -46,7 +46,7 @@ void	ft_new_window(t_datas *game)
 // {
 // 	char	angle;
 
-// 	angle = data->map.spawn_orientation;
+// 	angle = data->map->spawn_orientation;
 // 	if (angle == 'N')
 // 		data->rote_angle = M_PI_2;
 // 	else if (angle == 'E')

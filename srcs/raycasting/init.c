@@ -3,35 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/29 17:47:33 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:38:38 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-
-void init_maps(t_map *map)
-{
-	map->map2d = NULL;
-	map->row = -1;
-	map->north_texture = NULL;
-	map->south_texture = NULL;
-	map->east_texture = NULL;
-	map->west_texture = NULL;
-	map->filename = NULL;
-	map->starting_pos = '\0';
-	map->ceilling_color = -1;
-	map->floor_color = -1;
-	map->player.x = 0;
-	map->player.y = 0;
-}
-
 void init_game(t_datas *game)
 {
-	init_maps(&game->map);
+	game->map = NULL;
 	game->mlx = mlx_init();
 	game->cub_content = NULL;
 	game->screen_h = 1024;
@@ -45,14 +28,14 @@ void init_game(t_datas *game)
 
 void _start_game(t_datas *game)
 {
-	if (game->map.starting_pos == 'E')
+	if (game->map->spawn_orientation == 'E')
 	{
 		game->x_dir = 0.0;
 		game->y_dir = 1.0;
 		game->x_plane = 0.66;
 		game->y_plane = 0.0;
 	}
-	if (game->map.starting_pos == 'W')
+	if (game->map->spawn_orientation == 'W')
 	{
 		game->x_dir = 0.0;
 		game->y_dir = -1.0;
@@ -67,16 +50,16 @@ void start_game(t_datas *game)
 	game->movespeed = 0.4;
 	game->x_plane = 0.0;
 	game->y_plane = 0.66;
-	game->pos_x = game->map.player.x;
-	game->pos_y = game->map.player.y;
-	if (game->map.starting_pos == 'N')
+	game->pos_x = game->map->player.x;
+	game->pos_y = game->map->player.y;
+	if (game->map->spawn_orientation == 'N')
 	{
 		game->x_dir = -1.0;
 		game->y_dir = 0.0;
 		game->x_plane = 0.0;
 		game->y_plane = 0.66;
 	}
-	if (game->map.starting_pos == 'S')
+	if (game->map->spawn_orientation == 'S')
 	{
 		game->x_dir = 1.0;
 		game->y_dir = 0.0;

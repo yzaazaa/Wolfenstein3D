@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:08:12 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/29 16:54:37 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:30:05 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ void	check_map(t_map *map)
 		update_args(&current, &next_line, &previous_line);
 		line_pos++;
 	}
-	map->max_y = line_pos - 1;
-	map->max_x = len_biggest_str(map->map_content);
+	map->row = line_pos;
+	map->col = len_biggest_str(map->map_content);
 	if (!map->spawn_orientation)
 		puterr(NO_PLAYER);
 }

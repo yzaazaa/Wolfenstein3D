@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:41:53 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/29 16:42:43 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:29:45 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ static void	init_map(t_map *map)
 	map->south_texture = NULL;
 	map->west_texture = NULL;
 	map->east_texture = NULL;
+	map->ceilling_color = -1;
+	map->floor_color = -1;
+	map->row = -1;
+	map->col = -1;
+	map->player.x = -1;
+	map->player.y = -1;
 }
 
 // Function that removes all info lines from the .cub file
@@ -84,6 +90,7 @@ t_map	*parse_map(char *cub_file)
 	map = malloc(sizeof(t_map));
 	if (!map)
 		puterr(MALLOC_ERR);
+	map->filename = ft_strdup(cub_file);
 	init_map(map);
 	raw_map = get_raw_map(cub_file);
 	get_map_info(map, raw_map);
@@ -93,5 +100,6 @@ t_map	*parse_map(char *cub_file)
 	map->map_content = raw_map;
 	check_map(map);
 	map->map2d = list_to_array(map->map_content);
+	free_list(&map->map_content);
 	return (map);
 }

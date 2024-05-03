@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/29 17:46:53 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:38:38 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	draw_floor_ceiling(t_datas *game)
 	i = -1;
 	while (++i < game->draw_start)
 		game->image.pixels[i * game->screen_w + game->x] = \
-		rgb_to_int(game->map.ceilling_color);
+		rgb_to_int(game->map->ceilling_color);
 	i = game->draw_end;
 	while (++i < game->screen_h)
 		game->image.pixels[i * game->screen_w + game->x] = \
-		rgb_to_int(game->map.floor_color);
+		rgb_to_int(game->map->floor_color);
 }
 
 void	drawing(t_datas *game)

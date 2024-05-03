@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 21:25:53 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/24 17:22:04 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/03 21:32:33 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		is_empty_line(char *str);
 int		get_r(int rgb);
 int		get_g(int rgb);
 int		get_b(int rgb);
+void	print_array(char **arr);
 void	free_array(char **array);
 
 #endif

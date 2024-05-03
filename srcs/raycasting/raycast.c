@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/29 16:17:27 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:38:46 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	raycasting(t_datas *data)
 			data->map_y += data->y_step;
 			data->side = 1;
 		}
-		if (data->map.map2d[data->map_x][data->map_y] == '1')
+		if (data->map->map2d[data->map_x][data->map_y] == '1')
 			data->hit_wall = 1;
 	}
 	//Calculate distance projected on camera direction (Euclidean)

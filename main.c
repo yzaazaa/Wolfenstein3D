@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:42:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/29 17:32:34 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:37:27 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		puterr(INVALID_ARG);
 	init_game(&game);
-	// game.map.filename = ft_strdup(av[1]);
 	map = parse_map(av[1]);
+	game.map = map;
+	print_map_content(map);
 	start_game(&game);
 	mlx_hook(game.mlx_win, 2, 0, &key_pressed, &game);
 	mlx_hook(game.mlx_win, 3, 0, &key_released, &game);

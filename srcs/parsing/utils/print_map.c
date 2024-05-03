@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 01:50:36 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/29 17:38:14 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:32:14 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,15 @@ void	print_map_content(t_map *map)
 		printf("player x position: %d\n", map->player.x);
 	if (map->player.y != -1)
 		printf("player y position: %d\n", map->player.y);
-	if (map->max_x != -1)
-		printf("max x: %d\n", map->max_x);
-	if (map->max_y != -1)
-		printf("max y: %d\n", map->max_y);
-	if (map->map_content)
+	if (map->spawn_orientation != -1)
+		printf("spawn oritentation: %c\n", map->spawn_orientation);
+	if (map->col != -1)
+		printf("cols: %d\n", map->col);
+	if (map->row != -1)
+		printf("rows: %d\n", map->row);
+	if (map->map2d)
 	{	
 		printf("map :\n");
-		print_list(map->map_content);
+		print_array(map->map2d);
 	}
 }
