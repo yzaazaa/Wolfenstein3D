@@ -19,20 +19,23 @@ CFLAGS = -Wall -Wextra -Werror -ggdb3 -I includes -fsanitize=address
 all : $(NAME)
 
 %.o : %.c $(HEADERS)
-	$(COMP) $(CFLAGS) -Imlx -c $< -o $@
+	@$(COMP) $(CFLAGS) -Imlx -c $< -o $@
 
 $(NAME) : $(OBJS) $(GNL)
-	$(COMP) $(MLX) -fsanitize=address -I includes $(OBJS) $(GNL) -o $(NAME)
+	@echo "Compiling mandatory ..."
+	@$(COMP) $(MLX) -fsanitize=address -I includes $(OBJS) $(GNL) -o $(NAME)
 
 $(GNL) : $(GNL_HEADER)
-	$(MAKE) -C srcs/gnl/
+	@$(MAKE) -C srcs/gnl/
 
 clean :
-	$(MAKE) clean -C srcs/gnl
-	rm -rf $(OBJS)
+	@echo "Deleting object files ..."
+	@$(MAKE) clean -C srcs/gnl
+	@rm -rf $(OBJS)
 
 fclean :
-	$(MAKE) fclean -C srcs/gnl
-	rm -rf $(OBJS) $(NAME)
+	@echo "Deleting all ..."
+	@$(MAKE) fclean -C srcs/gnl
+	@rm -rf $(OBJS) $(NAME)
 
 re : fclean all
