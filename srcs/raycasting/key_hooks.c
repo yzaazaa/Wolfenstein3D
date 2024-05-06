@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:54:55 by frukundo          #+#    #+#             */
-/*   Updated: 2024/04/29 16:14:15 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/06 17:39:10 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	moves(t_datas *game)
 {
 	mlx_destroy_image(game->mlx, game->image.ptr);
 	game->image.ptr = mlx_new_image(game->mlx, game->screen_w, game->screen_h);
+	game->image.pixels = (int *)mlx_get_data_addr(game->image.ptr, &(game->image.bpp),
+												&(game->image.line_len), &(game->image.endian));
 	if (game->rot_right == 1)
 		rotate(game, -(game->rote_angle));
 	else if (game->rot_left == 1)

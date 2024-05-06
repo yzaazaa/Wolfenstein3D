@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/03 21:37:36 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/06 19:40:19 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 
 #	define FLOOR "F"
 #	define CEILLING "C"
+# define TAIL_SIZE 64
 
 
 typedef struct s_image
@@ -48,10 +49,10 @@ typedef struct s_image
 
 typedef struct s_textures
 {
-	char	*north;
-	char	*south;
-	char	*east;
-	char	*west;
+	int	*north;
+	int	*south;
+	int	*east;
+	int	*west;
 }				t_textures;
 
 typedef struct s_datas
@@ -100,6 +101,13 @@ typedef struct s_datas
 	int			move_up;
 	int			move_down;
 	int			fov_rd;
+
+	/*----- textures*/
+	double	wallX;
+	int		texX;
+	int		texY;
+	double	step;
+	double	texPos;
 } t_datas;
 
 /* ---- Init Functions ---- */
@@ -125,7 +133,6 @@ void	init_ray_distance(t_datas *data);
 void	raycasting(t_datas *data);
 void	calc_wall_height(t_datas *data);
 void	drawing(t_datas *game);
-void	draw_floor_ceiling(t_datas *game);
 
 /*-------- player movements -------*/
 void	move_forword(t_datas *game);

@@ -22,15 +22,17 @@ all : $(NAME)
 	$(COMP) $(CFLAGS) -Imlx -c $< -o $@
 
 $(NAME) : $(OBJS) $(GNL)
-	$(COMP) -fsanitize=address $(MLX) -I includes $(OBJS) $(GNL) -o $(NAME)
+	$(COMP) $(MLX) -fsanitize=address -I includes $(OBJS) $(GNL) -o $(NAME)
 
 $(GNL) : $(GNL_HEADER)
 	$(MAKE) -C srcs/gnl/
 
 clean :
+	$(MAKE) clean -C srcs/gnl
 	rm -rf $(OBJS)
 
 fclean :
+	$(MAKE) fclean -C srcs/gnl
 	rm -rf $(OBJS) $(NAME)
 
 re : fclean all
