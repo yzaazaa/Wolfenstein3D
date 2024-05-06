@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/06 19:58:41 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/06 20:29:30 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void init_game(t_datas *game)
 
 void _start_game(t_datas *game)
 {
-	if (game->map->spawn_orientation == 'E')
+	if (game->map->spawn_orientation == 'S')
 	{
 		game->x_dir = 0.0;
 		game->y_dir = 1.0;
 		game->x_plane = 0.66;
 		game->y_plane = 0.0;
 	}
-	if (game->map->spawn_orientation == 'W')
+	if (game->map->spawn_orientation == 'N')
 	{
 		game->x_dir = 0.0;
 		game->y_dir = -1.0;
@@ -51,14 +51,14 @@ void start_game(t_datas *game)
 	game->y_plane = 0.66;
 	game->pos_x = game->map->player.x;
 	game->pos_y = game->map->player.y;
-	if (game->map->spawn_orientation == 'N')
+	if (game->map->spawn_orientation == 'E')
 	{
 		game->x_dir = -1.0;
 		game->y_dir = 0.0;
 		game->x_plane = 0.0;
 		game->y_plane = 0.66;
 	}
-	if (game->map->spawn_orientation == 'S')
+	if (game->map->spawn_orientation == 'W')
 	{
 		game->x_dir = 1.0;
 		game->y_dir = 0.0;
