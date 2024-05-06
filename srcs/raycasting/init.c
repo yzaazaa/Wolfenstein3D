@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/03 21:38:38 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/06 19:58:41 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void init_game(t_datas *game)
 {
 	game->map = NULL;
 	game->mlx = mlx_init();
-	game->cub_content = NULL;
 	game->screen_h = 1024;
 	game->screen_w = 1024;
 	game->x = 0;

@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/06 19:40:19 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/06 19:58:28 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 #	define ESC_KEY 53
 #	define WIN_CLOSE 17
 #	define TILE_SIZE 30
-#	define FOV 60
 
 #	define FLOOR "F"
 #	define CEILLING "C"
@@ -59,7 +58,6 @@ typedef struct s_datas
 {
 	void		*mlx;
 	void		*mlx_win;
-	char		**cub_content;
 	t_image		image;
 	t_map		*map;
 	t_textures	textures;
@@ -100,14 +98,11 @@ typedef struct s_datas
 	int			move_left;
 	int			move_up;
 	int			move_down;
-	int			fov_rd;
 
 	/*----- textures*/
 	double	wallX;
 	int		texX;
 	int		texY;
-	double	step;
-	double	texPos;
 } t_datas;
 
 /* ---- Init Functions ---- */
