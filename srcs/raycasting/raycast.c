@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/03 21:38:46 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/06 14:02:23 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	raycasting(t_datas *data)
 			data->map_y += data->y_step;
 			data->side = 1;
 		}
-		if (data->map->map2d[data->map_x][data->map_y] == '1')
+		if (data->map->map2d[data->map_y][data->map_x] == '1' || data->map->map2d[data->map_y][data->map_x] == ' ')
 			data->hit_wall = 1;
 	}
 	//Calculate distance projected on camera direction (Euclidean)

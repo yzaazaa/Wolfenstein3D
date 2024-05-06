@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/03 21:38:38 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/06 14:00:53 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	draw_floor_ceiling(t_datas *game)
 	while (++i < game->screen_h)
 		game->image.pixels[i * game->screen_w + game->x] = \
 		rgb_to_int(game->map->floor_color);
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.ptr, 0, 0);
 }
 
 void	drawing(t_datas *game)

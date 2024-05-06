@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/03 21:38:56 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/06 13:59:01 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_free(t_datas *data, char *msg)
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	printf("%s", msg);
 	free_map(data->map);
-	free(data);
+	// free(data);
 	exit(EXIT_SUCCESS);
 }
 
