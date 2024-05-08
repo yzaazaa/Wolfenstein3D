@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 01:09:07 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/06 20:00:30 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/08 15:09:12 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	move_forword(t_datas *game)
 {
 	if (game->map->map2d[(int)(game->pos_x + game->x_dir)][(int)(\
-		game->pos_y + game->y_dir)] == '0')
+		game->pos_y + game->y_dir)] != '1')
 	{
 		game->pos_x += game->x_dir * game->movespeed;
 		game->pos_y += game->y_dir * game->movespeed;
@@ -25,7 +25,7 @@ void	move_forword(t_datas *game)
 void	move_backword(t_datas *game)
 {
 	if (game->map->map2d[(int)(game->pos_x - game->x_dir)][(int)(\
-		game->pos_y - game->y_dir)] == '0')
+		game->pos_y - game->y_dir)] != '1')
 	{
 		game->pos_x -= game->x_dir * game->movespeed;
 		game->pos_y -= game->y_dir * game->movespeed;
@@ -35,7 +35,7 @@ void	move_backword(t_datas *game)
 void	move_left(t_datas *game)
 {
 	if (game->map->map2d[(int)(game->pos_x)][(int)(\
-		game->pos_y + game->y_dir - game->y_plane)] == '0')
+		game->pos_y + game->y_dir - game->y_plane)] != '1')
 	{
 		game->pos_y -= game->y_plane * game->movespeed;
 		game->pos_x -= game->x_plane * game->movespeed;
@@ -45,7 +45,7 @@ void	move_left(t_datas *game)
 void	move_right(t_datas *game)
 {
 	if (game->map->map2d[(int)(game->pos_x)][(int)(\
-		game->pos_y + game->y_dir + game->y_plane)] == '0')
+		game->pos_y + game->y_dir + game->y_plane)] != '1')
 	{
 		game->pos_y += game->y_plane * game->movespeed;
 		game->pos_x += game->x_plane * game->movespeed;

@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:08:12 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/03 21:30:05 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/08 15:03:01 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	check_player_spawn(t_map *map, char *line, int i)
 	if (map->spawn_orientation == 0 && is_player_spawn(line[i]))
 	{
 		map->spawn_orientation = line[i];
-		map->player.x = i;
+		map->player.y = i;
 	}
 	else if (is_player_spawn(line[i]))
 		puterr(MANY_PLAYERS);
@@ -85,8 +85,8 @@ void	check_map(t_map *map)
 		if (is_empty_line(current_line))
 			puterr(EMPTY_LINE_IN_MAP);
 		check_line(map, current_line, next_line, previous_line);
-		if (map->player.x != -1 && map->player.y == -1)
-			map->player.y = line_pos;
+		if (map->player.y != -1 && map->player.x == -1)
+			map->player.x = line_pos;
 		update_args(&current, &next_line, &previous_line);
 		line_pos++;
 	}
