@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:08:12 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/08 15:03:01 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/08 15:20:08 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ static void	check_line(t_map *map, char *line, char *next_line, char *prev_line)
 	i = -1;
 	while (line[++i])
 	{
-		if ((line[i] == '0' || is_player_spawn(line[i]))
+		if ((line[i] == '0' || line[i] == 'D' || is_player_spawn(line[i]))
 			&& (i == 0 || line[i - 1] == ' '))
 			puterr(LEFT_EDGE);
-		else if ((line[i] == '0' || is_player_spawn(line[i]))
+		else if ((line[i] == '0' || line[i] == 'D'  || is_player_spawn(line[i]))
 			&& (!line[i + 1] || line[i + 1] == ' '))
 			puterr(RIGHT_EDGE);
-		else if ((line[i] == '0' || is_player_spawn(line[i]))
+		else if ((line[i] == '0' || line[i] == 'D'  || is_player_spawn(line[i]))
 			&& (!next_line || next_line[i] == ' '))
 			puterr(BOTTOM_EDGE);
-		else if ((line[i] == '0' || is_player_spawn(line[i]))
+		else if ((line[i] == '0' || line[i] == 'D'  || is_player_spawn(line[i]))
 			&& (!prev_line || prev_line[i] == ' '))
 			puterr(TOP_EDGE);
-		if (line[i] != '0' && line[i] != '1' && line[i] != ' '
+		if (line[i] != '0' && line[i] != '1' && line[i] != ' ' && line[i] != 'D'
 			&& !is_player_spawn(line[i]))
 			puterr(CHAR_UNEXPECTED);
 		check_player_spawn(map, line, i);
