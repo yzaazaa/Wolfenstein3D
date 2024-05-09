@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/09 15:18:24 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/09 20:35:01 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void init_game(t_datas *game)
 	game->mlx = mlx_init();
 	if (!game->mlx)
 		puterr(MLX_ERR);
-	game->screen_h = 1024;
-	game->screen_w = 1024;
+	game->screen_h = 480;
+	game->screen_w = 640;
 	game->x = 0;
 	ft_new_window(game);
 	game->image.ptr = mlx_new_image(game->mlx, game->screen_w, game->screen_h);

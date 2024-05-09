@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/09 15:09:58 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/09 20:52:27 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 
 #	define FLOOR "F"
 #	define CEILLING "C"
-# define TAIL_SIZE 64
+# define TEX_SIZE 64
 
 
 typedef struct s_image
@@ -100,6 +100,8 @@ typedef struct s_datas
 
 	/*----- textures*/
 	double	wallX;
+	double	step;
+	double	texPos;
 	int		texX;
 	int		texY;
 } t_datas;
