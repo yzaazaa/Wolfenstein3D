@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/04/27 17:03:21 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/08 15:29:06 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 # define PATH_EXTENSION "Path to texture not a xpm file!\n"
 # define LINE_UNEXPECTED "Line unexpected in file!\n"
 # define EMPTY_LINE_IN_MAP "Map cannot have an empty line!\n"
-# define LEFT_EDGE "Player or 0 on left edge!\n"
-# define RIGHT_EDGE "Player or 0 on right edge!\n"
-# define TOP_EDGE "Player or 0 on top edge!\n"
-# define BOTTOM_EDGE "Player or 0 on bottom edge!\n"
+# define LEFT_EDGE "Player or 0 or door on left edge!\n"
+# define RIGHT_EDGE "Player or 0 or door on right edge!\n"
+# define TOP_EDGE "Player or 0 or door on top edge!\n"
+# define BOTTOM_EDGE "Player or 0 or door on bottom edge!\n"
 # define CHAR_UNEXPECTED "Character unexpected in map!\n"
 # define MLX_ERR "Failed to initialize connection!\n"
 # define MLX_WINDOW_ERR "Failed to create window!\n"

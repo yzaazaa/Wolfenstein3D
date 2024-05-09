@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/08 03:59:08 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:18:57 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	raycasting(t_datas *data)
 			data->map_y += data->y_step;
 			data->side = 1;
 		}
-		if (data->map->map2d[data->map_x][data->map_y] == '1')
+		if (data->map_x < data->map->row && data->map_y < data->map->col && data->map->map2d[data->map_x][data->map_y] == '1')
 			data->hit_wall = 1;
 	}
 	//Calculate distance projected on camera direction (Euclidean)
@@ -107,7 +107,15 @@ int	launch_game(void *ptr)
 	t_datas *game;
 
 	game = ptr;
-	mlx_clear_window(game->mlx, game->mlx_win);
+	mlx_destroy_image(game->mlx, game->image.ptr);
+	game->image.ptr = mlx_new_image(game->mlx, game->screen_w, game->screen_h);
+	if (!game->image.ptr)
+		puterr(MLX_IMAGE_ERR);
+	game->image.pixels = (int *)mlx_get_data_addr(game->image.ptr, &(game->image.bpp),
+												&(game->image.line_len), &(game->image.endian));
+	if (!game->image.pixels)
+		puterr(MLX_IMAGE_DATA_ERR);
+	moves(game);
 	drawing(game);
 	return(0);
 }

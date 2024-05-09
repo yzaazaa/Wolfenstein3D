@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/06 19:58:28 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:09:58 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@
 #	define LEFT_R 123
 #	define ESC_KEY 53
 #	define WIN_CLOSE 17
-#	define TILE_SIZE 30
 
 #	define FLOOR "F"
 #	define CEILLING "C"

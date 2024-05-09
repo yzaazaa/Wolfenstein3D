@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/06 19:41:56 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/09 17:00:15 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ static void	draw_wall(t_datas *game, int *i)
 {
 	if (game->side == 0 && game->x_raydir > 0)
 		game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.south[game->texY * TAIL_SIZE + game->texX];
-	if (game->side == 0 && game->x_raydir <= 0)
+	else if (game->side == 0 && game->x_raydir <= 0)
 		game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.north[game->texY * TAIL_SIZE + game->texX];
-	if (game->side == 1 && game->y_raydir > 0)
+	else if (game->side == 1 && game->y_raydir > 0)
 		game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.east[game->texY * TAIL_SIZE + game->texX];
-	if (game->side == 1 && game->y_raydir <= 0)
+	else if (game->side == 1 && game->y_raydir <= 0)
 		game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.west[game->texY * TAIL_SIZE + game->texX];
+	// game->image.pixels[(*i)++ * game->screen_w + game->x] = 0xFF0000;
 }
 
 static void	draw_floor_ceiling(t_datas *game)

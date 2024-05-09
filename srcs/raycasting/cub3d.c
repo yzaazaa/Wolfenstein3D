@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/06 13:59:01 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/09 15:17:53 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	ft_close_win(t_datas *data)
 void	ft_new_window(t_datas *game)
 {
 	game->mlx_win = mlx_new_window(game->mlx, game->screen_w, game->screen_h, "cub3D");
+	if (!game->mlx_win)
+		puterr(MLX_WINDOW_ERR);
 	mlx_hook(game->mlx_win, WIN_CLOSE, 0, ft_close_win, game);
 }
 
