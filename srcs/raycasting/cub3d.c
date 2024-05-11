@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/09 15:17:53 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/11 03:37:49 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,21 @@ void	ft_new_window(t_datas *game)
 	if (!game->mlx_win)
 		puterr(MLX_WINDOW_ERR);
 	mlx_hook(game->mlx_win, WIN_CLOSE, 0, ft_close_win, game);
+}
+
+int ft_mouse(int x, int y, t_datas *vars)
+{
+    static int prev_x = -1;
+    double delta_angle;
+	(void)y;
+    if (prev_x != -1)
+    {
+        delta_angle = (x - prev_x) * MOUSE_SENSITIVITY;
+        rotate(vars, delta_angle);
+    }
+    prev_x = x;
+
+    return (0);
 }
 
 // static void	puterr_close_win(t_datas *data, char *s)

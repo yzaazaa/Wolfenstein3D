@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:42:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/09 20:52:38 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/11 03:37:39 by frukundo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	main(int ac, char **av)
 	start_game(&game);
 	mlx_hook(game.mlx_win, 2, 0, &key_pressed, &game);
 	mlx_hook(game.mlx_win, 3, 0, &key_released, &game);
+	mlx_hook(game.mlx_win, 6, 0, &ft_mouse, &game);
 	mlx_loop_hook(game.mlx, launch_game, &game);
 	mlx_loop(game.mlx);
 	free_map(map);
