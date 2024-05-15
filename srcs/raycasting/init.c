@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/09 20:35:01 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/15 15:32:52 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void _start_game(t_datas *game)
 void start_game(t_datas *game)
 {
 	game->rote_angle = 0.1;
-	game->movespeed = 0.2;
+	game->movespeed = 0.1;
 	game->x_plane = 0.0;
 	game->y_plane = 0.66;
 	game->pos_x = game->map->player.x;

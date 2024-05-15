@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/11 03:37:49 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/15 15:31:40 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,16 @@ void	ft_new_window(t_datas *game)
 
 int ft_mouse(int x, int y, t_datas *vars)
 {
-    static int prev_x = -1;
-    double delta_angle;
+    static int	prev_x = -1;
+	int			diff;
+
 	(void)y;
-    if (prev_x != -1)
-    {
-        delta_angle = (x - prev_x) * MOUSE_SENSITIVITY;
-        rotate(vars, delta_angle);
-    }
+	if (x != prev_x)
+	{	
+		diff = (prev_x != -1) * ((x - prev_x) > 0);
+		diff = (diff * 2) - 1;
+		rotate(vars, (-diff * vars->rote_angle) * MOUSE_SENSITIVITY);
+	}
     prev_x = x;
 
     return (0);

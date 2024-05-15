@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/11 03:36:49 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/15 15:32:15 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 #	define FLOOR "F"
 #	define CEILLING "C"
 #	define TEX_SIZE 64
-#	define MOUSE_SENSITIVITY 0.1
+#	define MOUSE_SENSITIVITY 0.5
 
 typedef struct s_image
 {
