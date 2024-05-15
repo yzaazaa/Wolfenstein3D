@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/15 15:32:15 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/15 21:40:53 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 #	define FLOOR "F"
 #	define CEILLING "C"
 #	define TEX_SIZE 64
+#	define TILE_SIZE 6
 #	define MOUSE_SENSITIVITY 0.5
 
 typedef struct s_image
@@ -52,6 +53,12 @@ typedef struct s_textures
 	int	*east;
 	int	*west;
 }				t_textures;
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}				t_point;
 
 typedef struct s_datas
 {
@@ -137,5 +144,7 @@ void	move_left(t_datas *game);
 void	move_right(t_datas *game);
 void	rotate(t_datas *game, double angle);
 int		ft_mouse(int x, int y, t_datas *vars);
+
+void	draw_mini_map(t_datas *game);
 
 #endif

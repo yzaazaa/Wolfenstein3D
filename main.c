@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frukundo <frukundo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:42:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/11 03:37:39 by frukundo         ###   ########.fr       */
+/*   Updated: 2024/05/15 21:39:37 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int	main(int ac, char **av)
 	init_game(&game);
 	map = parse_map(av[1]);
 	game.map = map;
-	// print_map_content(map);
 	load_textures(&game);
 	start_game(&game);
 	mlx_hook(game.mlx_win, 2, 0, &key_pressed, &game);

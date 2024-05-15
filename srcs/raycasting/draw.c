@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/09 21:20:23 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/15 21:41:54 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,4 @@ void	drawing(t_datas *game)
 		draw_floor_ceiling(game);
 		game->x++;
 	}
-	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.ptr, 0, 0);
 }
