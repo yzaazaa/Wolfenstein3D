@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 01:09:07 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/16 17:04:42 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 17:43:24 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,32 @@
 
 void	move_forword(t_datas *game)
 {
-	if (game->map->map2d[(int)(game->pos_x + game->x_dir)][(int)(\
-		game->pos_y + game->y_dir)] != '1' && game->map->map2d[(int)(game->pos_x + game->x_dir)][(int)(\
-		game->pos_y + game->y_dir)] != 'D')
-	{
-		game->pos_x += game->x_dir * game->movespeed;
+	if (ft_strchr("0SENWd", game->map->map2d[(int)(game->pos_x)][(int)(game->pos_y + game->y_dir * game->movespeed)]))
 		game->pos_y += game->y_dir * game->movespeed;
-	}
+	if (ft_strchr("0SENWd", game->map->map2d[(int)(game->pos_x + game->x_dir * game->movespeed)][(int)(game->pos_y)]))
+		game->pos_x += game->x_dir * game->movespeed;
+	// if (game->map->map2d[(int)(game->pos_x + game->x_dir)][(int)(\
+	// 	game->pos_y + game->y_dir)] != '1' && game->map->map2d[(int)(game->pos_x + game->x_dir)][(int)(\
+	// 	game->pos_y + game->y_dir)] != 'D')
+	// {
+	// 	game->pos_x += game->x_dir * game->movespeed;
+	// 	game->pos_y += game->y_dir * game->movespeed;
+	// }
 }
 
 void	move_backword(t_datas *game)
 {
-	if (game->map->map2d[(int)(game->pos_x - game->x_dir)][(int)(\
-		game->pos_y - game->y_dir)] != '1' && game->map->map2d[(int)(game->pos_x - game->x_dir)][(int)(\
-		game->pos_y - game->y_dir)] != 'D')
-	{
-		game->pos_x -= game->x_dir * game->movespeed;
+	if (ft_strchr("0SENWd", game->map->map2d[(int)(game->pos_x)][(int)(game->pos_y - game->y_dir * game->movespeed)]))
 		game->pos_y -= game->y_dir * game->movespeed;
-	}
+	if (ft_strchr("0SENWd", game->map->map2d[(int)(game->pos_x - game->x_dir * game->movespeed)][(int)(game->pos_y)]))
+		game->pos_x -= game->x_dir * game->movespeed;
+	// if (game->map->map2d[(int)(game->pos_x - game->x_dir)][(int)(\
+	// 	game->pos_y - game->y_dir)] != '1' && game->map->map2d[(int)(game->pos_x - game->x_dir)][(int)(\
+	// 	game->pos_y - game->y_dir)] != 'D')
+	// {
+	// 	game->pos_x -= game->x_dir * game->movespeed;
+	// 	game->pos_y -= game->y_dir * game->movespeed;
+	// }
 }
 
 void	move_left(t_datas *game)
