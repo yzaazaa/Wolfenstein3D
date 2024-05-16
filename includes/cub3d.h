@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/15 21:40:53 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 11:05:45 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 #	define CEILLING "C"
 #	define TEX_SIZE 64
 #	define TILE_SIZE 6
+#	define MINI_MAP_SIZE 16
 #	define MOUSE_SENSITIVITY 0.5
 
 typedef struct s_image

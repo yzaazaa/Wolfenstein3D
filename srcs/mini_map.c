@@ -11,7 +11,7 @@ void	draw_square(t_datas *game, t_point begin, int size, int color)
 		j = begin.y;
 		while (j < begin.y + size)
 		{
-			game->image.pixels[i * game->screen_w + j] = color;
+			game->image.pixels[j * game->screen_w + i] = color;
 			j++;
 		}
 		i++;
@@ -21,27 +21,47 @@ void	draw_square(t_datas *game, t_point begin, int size, int color)
 void	draw_mini_map(t_datas *game)
 {
 	int	color;
-	int	i;
-	int	j;
 	int	offset_x;
+	t_point	starting_pixel;
+	t_point	end_pixel;
+	t_point	player;
 
-	offset_x = game->screen_w / 2 - (ft_strlen(game->map->map2d[0]) * TILE_SIZE) / 2;
-	i = 0;
-	while (i < game->map->row)
+	offset_x = game->screen_w / 2 - ((MINI_MAP_SIZE / 2) * TILE_SIZE);
+	player.x = floor(game->pos_x) - (MINI_MAP_SIZE / 2);
+	if (player.x < 0)
+		player.x = 0;
+	if (player.x + MINI_MAP_SIZE > game->map->row)
+		player.x = game->map->row - MINI_MAP_SIZE;
+	player.y = floor(game->pos_y) - (MINI_MAP_SIZE / 2);
+	if (player.y < 0)
+		player.y = 0;
+	if (player.y + MINI_MAP_SIZE >  game->map->col)
+		player.y = game->map->col - MINI_MAP_SIZE;
+	starting_pixel.x = offset_x;
+	starting_pixel.y = 0;
+	end_pixel.x = offset_x + (MINI_MAP_SIZE * TILE_SIZE);
+	end_pixel.y = MINI_MAP_SIZE * TILE_SIZE;
+	while (starting_pixel.x < end_pixel.x)
 	{
-		j = 0;
-		while (game->map->map2d[i][j] != '\0')
+		starting_pixel.y = 0;
+		player.y = floor(game->pos_y) - (MINI_MAP_SIZE / 2);
+		if (player.y < 0)
+			player.y = 0;
+		if (player.y + MINI_MAP_SIZE >  game->map->col)
+			player.y = game->map->col - MINI_MAP_SIZE;
+		while (starting_pixel.y < end_pixel.y)
 		{
-			if (game->map->map2d[i][j] == '1')
-				color = 0;
-			else if (game->map->map2d[i][j] == 'D')
-				color = 0x632b02;
+			if (player.y == floor(game->pos_y) && player.x == floor(game->pos_x))
+				color = 0xFF0000;
+			else if (game->map->map2d[player.x][player.y] == '1')
+				color = 0x000000;
 			else
 				color = 0xFFFFFF;
-				draw_square(game, (t_point){i * TILE_SIZE, offset_x + j * TILE_SIZE}, TILE_SIZE, color);
-				j++;
+			draw_square(game, starting_pixel, TILE_SIZE, color);
+			starting_pixel.y += TILE_SIZE;
+			player.y++;
 		}
-		i++;
+		starting_pixel.x += TILE_SIZE;
+		player.x++;
 	}
-	draw_square(game, (t_point){floor(game->pos_x) * TILE_SIZE, offset_x + floor(game->pos_y) * TILE_SIZE}, TILE_SIZE, 0xFF0000);
 }
