@@ -26,7 +26,8 @@ void	draw_mini_map(t_datas *game)
 	t_point	end_pixel;
 	t_point	player;
 
-	offset_x = game->screen_w / 2 - ((MINI_MAP_SIZE / 2) * TILE_SIZE);
+	// offset_x = game->screen_w / 2 - ((MINI_MAP_SIZE / 2) * TILE_SIZE);
+	offset_x = 0;
 	player.x = floor(game->pos_x) - (MINI_MAP_SIZE / 2);
 	if (player.x + MINI_MAP_SIZE > game->map->row)
 		player.x = game->map->row - MINI_MAP_SIZE;
@@ -55,7 +56,7 @@ void	draw_mini_map(t_datas *game)
 				color = 0xFF0000;
 			else if (game->map->map2d[player.x][player.y] == '1')
 				color = 0x000000;
-			else if (game->map->map2d[player.x][player.y] == 'D')
+			else if (game->map->map2d[player.x][player.y] == 'D' || game->map->map2d[player.x][player.y] == 'd')
 				color = 0x00FFFF;
 			else
 				color = 0xFFFFFF;
