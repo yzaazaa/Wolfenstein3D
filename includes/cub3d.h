@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/16 14:31:47 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 16:51:53 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 #	define RIGHT_R 124
 #	define LEFT_R 123
 #	define ESC_KEY 53
+#	define SPACE 49
 #	define WIN_CLOSE 17
 
 #	define FLOOR "F"
@@ -106,6 +107,7 @@ typedef struct s_datas
 	int			move_left;
 	int			move_up;
 	int			move_down;
+	int			open_door;
 	int			door;
 
 	/*----- textures*/
@@ -147,6 +149,7 @@ void	move_left(t_datas *game);
 void	move_right(t_datas *game);
 void	rotate(t_datas *game, double angle);
 int		ft_mouse(int x, int y, t_datas *vars);
+void	open_door(t_datas *game);
 
 void	draw_mini_map(t_datas *game);
 

@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:54:55 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/09 15:11:05 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 16:51:39 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	key_pressed(int key, t_datas *game_ptr)
 		game_ptr->move_left = 1;
 	else if (key == ESC_KEY)
 		ft_close_win(game_ptr);
+	else if (key == SPACE)
+		game_ptr->open_door = 1;
 	else
 		return (1);
 	return (0);
@@ -64,6 +66,8 @@ int	key_released(int key, t_datas *game_ptr)
 		game_ptr->move_right = 0;
 	else if (key == LEFT_M)
 		game_ptr->move_left = 0;
+	else if (key == SPACE)
+		open_door(game_ptr);
 	else
 		return (1);
 	return (0);

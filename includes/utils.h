@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 21:25:53 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/03 21:32:33 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 16:50:41 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <limits.h>
 
+void	*ft_memset(void *b, int c, size_t len);
 void	puterr(char *s);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strlen(char const *str);
