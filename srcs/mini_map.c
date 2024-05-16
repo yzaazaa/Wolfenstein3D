@@ -37,9 +37,6 @@ void	draw_mini_map(t_datas *game)
 		player.y = game->map->col - MINI_MAP_SIZE;
 	if (player.y < 0)
 		player.y = 0;
-	print_array(game->map->map2d);
-	printf("initial position: %d, %d\n", (int)floor(game->pos_x), (int)floor(game->pos_y));
-	printf("changed position: %d, %d\n", player.x, player.y);
 	starting_pixel.x = offset_x;
 	starting_pixel.y = 0;
 	end_pixel.x = offset_x + (MINI_MAP_SIZE * TILE_SIZE);
@@ -56,8 +53,10 @@ void	draw_mini_map(t_datas *game)
 		{
 			if (player.y == floor(game->pos_y) && player.x == floor(game->pos_x))
 				color = 0xFF0000;
-			else if ((printf("%d, %d\n", player.x, player.y)), game->map->map2d[player.x][player.y] == '1')
+			else if (game->map->map2d[player.x][player.y] == '1')
 				color = 0x000000;
+			else if (game->map->map2d[player.x][player.y] == 'D')
+				color = 0x00FFFF;
 			else
 				color = 0xFFFFFF;
 			draw_square(game, starting_pixel, TILE_SIZE, color);

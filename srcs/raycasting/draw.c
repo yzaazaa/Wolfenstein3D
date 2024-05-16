@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/15 21:41:54 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 14:37:28 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 static void	draw_wall(t_datas *game, int *i)
 {
-	if (game->side == 0 && game->x_raydir > 0)
-	game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.south[game->texY * TEX_SIZE + game->texX];
+	if (game->door == 1)
+		game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.door[game->texY * TEX_SIZE + game->texX];
+	else if (game->side == 0 && game->x_raydir > 0)
+		game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.south[game->texY * TEX_SIZE + game->texX];
 	else if (game->side == 0 && game->x_raydir <= 0)
 		game->image.pixels[(*i)++ * game->screen_w + game->x] = game->textures.north[game->texY * TEX_SIZE + game->texX];
 	else if (game->side == 1 && game->y_raydir > 0)

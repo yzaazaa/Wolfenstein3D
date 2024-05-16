@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:42:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/15 21:39:37 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 14:33:29 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,15 @@ static void	load_textures(t_datas *game)
 	load_texture(game, game->map->south_texture, &game->textures.south);
 	load_texture(game, game->map->east_texture, &game->textures.east);
 	load_texture(game, game->map->west_texture, &game->textures.west);
+	load_texture(game, "textures/wolfenstein/door.xpm", &game->textures.door);
 }
-
+#include "string.h"
 int	main(int ac, char **av)
 {
 	t_datas game;
 	t_map	*map;
 
+	bzero(&game, sizeof(t_datas));
 	if (ac != 2)
 		puterr(INVALID_ARG);
 	init_game(&game);

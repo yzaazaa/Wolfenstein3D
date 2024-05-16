@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/16 14:11:33 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/16 14:31:47 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_textures
 	int	*south;
 	int	*east;
 	int	*west;
+	int	*door;
 }				t_textures;
 
 typedef struct s_point
@@ -105,6 +106,7 @@ typedef struct s_datas
 	int			move_left;
 	int			move_up;
 	int			move_down;
+	int			door;
 
 	/*----- textures*/
 	double	wallX;
