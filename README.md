@@ -15,10 +15,23 @@ Making the project.
 ```bash
 make
 ```
+
+or
+
+```bash
+make bonus
+```
+
 ## Running
 
 ```bash
 ./cub3d path_to_map
+```
+
+or
+
+```bash
+./cub3d_bonus path_to_map
 ```
 
 ## Cleaning the folder from object files
