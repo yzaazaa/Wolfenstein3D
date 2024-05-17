@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   error_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 16:56:49 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/17 16:58:43 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#ifndef ERROR_BONUS_H
+# define ERROR_BONUS_H
 
 # define INVALID_ARG "Invalid number of arguments!\n"
 # define MALLOC_ERR "Failed to allocate memory!\n"

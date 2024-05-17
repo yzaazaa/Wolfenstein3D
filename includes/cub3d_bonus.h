@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 16:56:39 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/17 16:58:07 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include <mlx.h>
 # include <stdio.h>
@@ -30,11 +30,15 @@
 # define RIGHT_R 124
 # define LEFT_R 123
 # define ESC_KEY 53
+# define SPACE 49
 # define WIN_CLOSE 17
 
 # define FLOOR "F"
 # define CEILLING "C"
 # define TEX_SIZE 64
+# define TILE_SIZE 8
+# define MINI_MAP_SIZE 16
+# define MOUSE_SENSITIVITY 1
 
 /* ---- Init Functions ---- */
 void	init_maps(t_map *map);
@@ -66,8 +70,11 @@ void	move_backword(t_datas *game);
 void	move_left(t_datas *game);
 void	move_right(t_datas *game);
 void	rotate(t_datas *game, double angle);
+int		ft_mouse(int x, int y, t_datas *vars);
+void	open_door(t_datas *game);
 
 void	put_pixel(t_datas *game, int x, int y, int color);
+void	draw_mini_map(t_datas *game);
 void	draw_crosshair(t_datas *game);
 
 #endif
