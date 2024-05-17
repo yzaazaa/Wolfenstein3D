@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 16:56:39 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/17 20:45:54 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@
 # define FLOOR "F"
 # define CEILLING "C"
 # define TEX_SIZE 64
+# define SCREEN_H 1024
+# define SCREEN_W 1024
 
 /* ---- Init Functions ---- */
 void	init_maps(t_map *map);

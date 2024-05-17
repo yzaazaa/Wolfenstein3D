@@ -2,7 +2,7 @@ SRCS = $(addprefix mandatory/, main.c srcs/list/list.c srcs/list/list2.c srcs/pa
 
 HEADERS = includes/error.h includes/parsing.h includes/cub3d.h
 
-SRCS_BONUS = $(addprefix bonus/, main.c srcs/list/list.c srcs/list/list2.c srcs/parsing/check_file_name.c srcs/parsing/check_map.c srcs/parsing/get_color.c srcs/parsing/get_map_info.c srcs/parsing/get_raw_map.c srcs/parsing/get_texture.c srcs/parsing/parsing.c srcs/raycasting/cub3d.c srcs/raycasting/draw.c srcs/raycasting/init.c srcs/raycasting/key_hooks.c srcs/raycasting/raycast.c srcs/raycasting/player_moves.c srcs/utils/free_array.c srcs/utils/ft_atoi.c srcs/utils/ft_isdigit.c srcs/utils/ft_memcpy.c srcs/utils/ft_memset.c srcs/utils/ft_strchr.c srcs/utils/ft_strcmp.c srcs/utils/ft_strdup.c srcs/utils/ft_strlcpy.c srcs/utils/ft_strlen.c srcs/utils/ft_strtrim.c srcs/utils/ft_substr.c srcs/utils/get_color.c srcs/utils/is_empty_line.c srcs/utils/puterr.c srcs/parsing/utils/fill_spaces.c srcs/parsing/utils/free_map.c srcs/parsing/utils/is_player_spawn.c srcs/mini_map/mini_map.c srcs/raycasting/crosshair.c srcs/raycasting/open_door.c)
+SRCS_BONUS = $(addprefix bonus/, main.c srcs/list/list.c srcs/list/list2.c srcs/parsing/check_file_name.c srcs/parsing/check_map.c srcs/parsing/get_color.c srcs/parsing/get_map_info.c srcs/parsing/get_raw_map.c srcs/parsing/get_texture.c srcs/parsing/parsing.c srcs/raycasting/cub3d.c srcs/raycasting/draw.c srcs/raycasting/init.c srcs/raycasting/key_hooks.c srcs/raycasting/raycast.c srcs/raycasting/player_moves.c srcs/utils/free_array.c srcs/utils/ft_atoi.c srcs/utils/ft_isdigit.c srcs/utils/ft_memcpy.c srcs/utils/ft_memset.c srcs/utils/ft_strchr.c srcs/utils/ft_strcmp.c srcs/utils/ft_strdup.c srcs/utils/ft_strlcpy.c srcs/utils/ft_strlen.c srcs/utils/ft_strtrim.c srcs/utils/ft_substr.c srcs/utils/get_color.c srcs/utils/is_empty_line.c srcs/utils/puterr.c srcs/parsing/utils/fill_spaces.c srcs/parsing/utils/free_map.c srcs/parsing/utils/is_player_spawn.c srcs/mini_map/mini_map.c srcs/raycasting/crosshair.c srcs/raycasting/open_door.c srcs/raycasting/gun.c)
 
 HEADERS_BONUS = includes/error_bonus.h includes/parsing_bonus.h includes/cub3d_bonus.h
 
@@ -22,7 +22,7 @@ COMP = cc
 
 MLX = -lmlx -framework OpenGL -framework AppKit
 
-CFLAGS = -Wall -Wextra -Werror -ggdb3 -fsanitize=address -I includes
+CFLAGS = -Wall -Wextra -Werror -I includes -ggdb3 -fsanitize=address
 
 all : $(NAME)
 
@@ -31,13 +31,13 @@ all : $(NAME)
 
 $(NAME) : $(OBJS) $(GNL)
 	@echo "Compiling mandatory ..."
-	@$(COMP) $(MLX) -fsanitize=address -I includes $(OBJS) $(GNL) -o $(NAME)
+	@$(COMP) $(MLX) -ggdb3 -fsanitize=address -I includes $(OBJS) $(GNL) -o $(NAME)
 
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(OBJS_BONUS) $(GNL)
 	@echo "Compiling bonus ..."
-	@$(COMP) $(MLX) -fsanitize=address -I includes $(OBJS_BONUS) $(GNL) -o $(NAME_BONUS)
+	@$(COMP) $(MLX) -I includes -ggdb3 -fsanitize=address $(OBJS_BONUS) $(GNL) -o $(NAME_BONUS)
 
 $(GNL) : $(GNL_HEADER)
 	@$(MAKE) -C gnl/

@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:42:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 16:44:31 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/17 21:37:10 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	load_texture(t_datas *game, char *path_to_texture, int **data)
 {
 	void	*image;
-	int		nb;
+	int		width;
+	int		height;
 
-	nb = 0;
-	image = mlx_xpm_file_to_image(game->mlx, path_to_texture, &nb, &nb);
-	if (!image)
+	image = mlx_xpm_file_to_image(game->mlx, path_to_texture, &height, &width);
+	if (!image || width != 64 || height != 64)
 		puterr(CONVERT_XPM_ERR, game, NULL);
-	*data = (int *)mlx_get_data_addr(image, &nb, &nb, &nb);
+	*data = (int *)mlx_get_data_addr(image, &width, &width, &width);
 	if (!*data)
 		puterr(MLX_IMAGE_DATA_ERR, game, NULL);
 }

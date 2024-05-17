@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:28:21 by Razog             #+#    #+#             */
-/*   Updated: 2024/05/17 16:58:28 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/17 21:23:23 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,17 @@ typedef struct s_datas
 	double		texpos;
 	int			tex_x;
 	int			tex_y;
+
+	/*-----	sprites*/
+	int			sprite_index;
+	int			sprite1_height;
+	int			sprite2_height;
+	int			sprite3_height;
+	int			sprite4_height;
+	void		*shoot1;
+	void		*shoot2;
+	void		*shoot3;
+	void		*shoot4;
 }			t_datas;
 
 #endif

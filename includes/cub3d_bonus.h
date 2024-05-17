@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 16:58:07 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/17 21:51:08 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@
 # define TILE_SIZE 8
 # define MINI_MAP_SIZE 16
 # define MOUSE_SENSITIVITY 1
+# define SCREEN_H 1024
+# define SCREEN_W 1024
 
 /* ---- Init Functions ---- */
 void	init_maps(t_map *map);
@@ -72,9 +74,11 @@ void	move_right(t_datas *game);
 void	rotate(t_datas *game, double angle);
 int		ft_mouse(int x, int y, t_datas *vars);
 void	open_door(t_datas *game);
+int		shoot(int button, int x, int y, void *param);
 
 void	put_pixel(t_datas *game, int x, int y, int color);
 void	draw_mini_map(t_datas *game);
 void	draw_crosshair(t_datas *game);
+void	draw_gun(t_datas *game);
 
 #endif
