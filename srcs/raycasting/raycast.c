@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/16 14:34:02 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/17 14:11:44 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ int	launch_game(void *ptr)
 	moves(game);
 	drawing(game);
 	draw_mini_map(game);
+	draw_crosshair(game);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.ptr, 0, 0);
 	return(0);
 }
