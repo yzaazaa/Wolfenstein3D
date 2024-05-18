@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 17:27:51 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/18 20:14:39 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@
 # define SPACE 49
 # define WIN_CLOSE 17
 # define TEX_SIZE 64
-# define TILE_SIZE 8
+# define TILE_SIZE 16
 # define MINI_MAP_SIZE 16
-# define MOUSE_SENSITIVITY 1
-# define SCREEN_H 1024
-# define SCREEN_W 1024
+# define MOUSE_SENSITIVITY 0.5
+# define SCREEN_H 1080
+# define SCREEN_W 1920
 # define SPRITE1 "sprites/shoot1.xpm"
 # define SPRITE2 "sprites/shoot2.xpm"
 # define SPRITE3 "sprites/shoot3.xpm"
