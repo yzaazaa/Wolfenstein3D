@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:10:22 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:10:23 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/18 21:12:51 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,18 @@ static void	load_texture(t_datas *game, char *path, t_image *img, int size)
 		puterr(MLX_IMAGE_DATA_ERR, game, NULL);
 }
 
+static void	load_sprite(t_datas *game, char *path, void **img_ptr, int size)
+{
+	int	w;
+	int	h;
+
+	*img_ptr = mlx_xpm_file_to_image(game->mlx, path, &w, &h);
+	if (!img_ptr || w != size || h != size)
+		puterr(CONVERT_XPM_ERR, game, NULL);
+}
+
 void	load_textures(t_datas *game)
 {
-	int			w;
-	int			h;
 	static int	t = TEX_SIZE;
 
 	load_texture(game, game->map->north_texture, &game->textures.north, t);
@@ -37,16 +45,8 @@ void	load_textures(t_datas *game)
 	load_texture(game, game->map->east_texture, &game->textures.east, t);
 	load_texture(game, game->map->west_texture, &game->textures.west, t);
 	load_texture(game, game->map->door_texture, &game->textures.door, t);
-	game->shoot1 = mlx_xpm_file_to_image(game->mlx, SPRITE1, &w, &h);
-	if (!game->shoot1 || w != 500 || h != 500)
-		puterr(CONVERT_XPM_ERR, game, NULL);
-	game->shoot2 = mlx_xpm_file_to_image(game->mlx, SPRITE2, &w, &h);
-	if (!game->shoot2 || w != 500 || h != 500)
-		puterr(CONVERT_XPM_ERR, game, NULL);
-	game->shoot3 = mlx_xpm_file_to_image(game->mlx, SPRITE3, &w, &h);
-	if (!game->shoot3 || w != 500 || h != 500)
-		puterr(CONVERT_XPM_ERR, game, NULL);
-	game->shoot4 = mlx_xpm_file_to_image(game->mlx, SPRITE4, &w, &h);
-	if (!game->shoot4 || w != 500 || h != 500)
-		puterr(CONVERT_XPM_ERR, game, NULL);
+	load_sprite(game, SPRITE1, &game->shoot1, 500);
+	load_sprite(game, SPRITE2, &game->shoot2, 500);
+	load_sprite(game, SPRITE3, &game->shoot3, 500);
+	load_sprite(game, SPRITE4, &game->shoot4, 500);
 }
