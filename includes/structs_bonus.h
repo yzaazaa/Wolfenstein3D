@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:28:21 by Razog             #+#    #+#             */
-/*   Updated: 2024/05/17 21:23:23 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:08:07 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_map
 	char				*south_texture;
 	char				*west_texture;
 	char				*east_texture;
+	char				*door_texture;
 	int					row;
 	int					col;
 	t_vector			player;
@@ -60,11 +61,11 @@ typedef struct s_image
 
 typedef struct s_textures
 {
-	int	*north;
-	int	*south;
-	int	*east;
-	int	*west;
-	int	*door;
+	t_image	north;
+	t_image	south;
+	t_image	east;
+	t_image	west;
+	t_image	door;
 }				t_textures;
 
 typedef struct s_point
@@ -129,10 +130,6 @@ typedef struct s_datas
 
 	/*-----	sprites*/
 	int			sprite_index;
-	int			sprite1_height;
-	int			sprite2_height;
-	int			sprite3_height;
-	int			sprite4_height;
 	void		*shoot1;
 	void		*shoot2;
 	void		*shoot3;

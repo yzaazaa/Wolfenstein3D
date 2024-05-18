@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 21:48:03 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:14:38 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,14 +116,15 @@ int	launch_game(void *ptr)
 	if (!game->image.pixels)
 		puterr(MLX_IMAGE_DATA_ERR, game, NULL);
 	if (game->sprite_index > 0)
-		game->sprite_index--;
-	if (game->sprite_index <= 0)
-		game->sprite_index--;
+		game->sprite_index++;
+	if (game->sprite_index > 20)
+		game->sprite_index = 0;
 	moves(game);
 	drawing(game);
 	draw_mini_map(game);
 	draw_crosshair(game);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.ptr, 0, 0);
+	put_string_door(game);
 	draw_gun(game);
 	return (0);
 }

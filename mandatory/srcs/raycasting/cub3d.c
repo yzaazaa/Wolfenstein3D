@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:07:48 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 16:59:04 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 12:41:45 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 void	ft_free(t_datas *data, char *msg)
 {
-	mlx_destroy_image(data->mlx, data->image.ptr);
+	if (data->image.ptr)
+		mlx_destroy_image(data->mlx, data->image.ptr);
+	if (data->textures.north.ptr)
+		mlx_destroy_image(data->mlx, data->textures.north.ptr);
+	if (data->textures.south.ptr)
+		mlx_destroy_image(data->mlx, data->textures.south.ptr);
+	if (data->textures.east.ptr)
+		mlx_destroy_image(data->mlx, data->textures.east.ptr);
+	if (data->textures.west.ptr)
+		mlx_destroy_image(data->mlx, data->textures.west.ptr);
 	if (data->map)
 		free_map(data->map);
 	mlx_destroy_window(data->mlx, data->mlx_win);

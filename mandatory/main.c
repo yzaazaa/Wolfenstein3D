@@ -6,23 +6,23 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:42:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 21:37:10 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:14:13 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	load_texture(t_datas *game, char *path_to_texture, int **data)
+static void	load_texture(t_datas *game, char *path, t_image *img)
 {
-	void	*image;
 	int		width;
 	int		height;
 
-	image = mlx_xpm_file_to_image(game->mlx, path_to_texture, &height, &width);
-	if (!image || width != 64 || height != 64)
+	img->ptr = mlx_xpm_file_to_image(game->mlx, path, &height, &width);
+	if (!img->ptr || width != 64 || height != 64)
 		puterr(CONVERT_XPM_ERR, game, NULL);
-	*data = (int *)mlx_get_data_addr(image, &width, &width, &width);
-	if (!*data)
+	img->pixels = (int *)mlx_get_data_addr(img->ptr,
+			&img->bpp, &img->line_len, &img->endian);
+	if (!img->pixels)
 		puterr(MLX_IMAGE_DATA_ERR, game, NULL);
 }
 

@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:28:21 by Razog             #+#    #+#             */
-/*   Updated: 2024/05/17 20:42:49 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 12:39:43 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ typedef struct s_image
 
 typedef struct s_textures
 {
-	int	*north;
-	int	*south;
-	int	*east;
-	int	*west;
+	t_image	north;
+	t_image	south;
+	t_image	east;
+	t_image	west;
 }				t_textures;
 
 typedef struct s_point

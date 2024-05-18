@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 16:58:55 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:14:55 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 static void	draw_wall(t_datas *game, int *i)
 {
-	if (game->door == 1)
+	if (game->side == 0 && game->x_raydir > 0)
 		put_pixel(game, game->x,
-			(*i)++, game->textures.door[game->tex_y * TEX_SIZE + game->tex_x]);
-	else if (game->side == 0 && game->x_raydir > 0)
-		put_pixel(game, game->x,
-			(*i)++, game->textures.south[game->tex_y * TEX_SIZE + game->tex_x]);
+			(*i)++,
+			game->textures.south.pixels[game->tex_y * TEX_SIZE + game->tex_x]);
 	else if (game->side == 0 && game->x_raydir <= 0)
 		put_pixel(game, game->x,
-			(*i)++, game->textures.north[game->tex_y * TEX_SIZE + game->tex_x]);
+			(*i)++,
+			game->textures.north.pixels[game->tex_y * TEX_SIZE + game->tex_x]);
 	else if (game->side == 1 && game->y_raydir > 0)
 		put_pixel(game, game->x,
-			(*i)++, game->textures.east[game->tex_y * TEX_SIZE + game->tex_x]);
+			(*i)++,
+			game->textures.east.pixels[game->tex_y * TEX_SIZE + game->tex_x]);
 	else if (game->side == 1 && game->y_raydir <= 0)
 		put_pixel(game, game->x,
-			(*i)++, game->textures.west[game->tex_y * TEX_SIZE + game->tex_x]);
+			(*i)++,
+			game->textures.west.pixels[game->tex_y * TEX_SIZE + game->tex_x]);
 }
 
 static void	draw_floor_ceiling(t_datas *game)

@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:29:13 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 16:53:09 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:30:43 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,27 @@ static int	check_first_line(char *line)
 	return (1);
 }
 
+static int	get_colors(t_map *map, char *line)
+{
+	if (map->floor_color == -1 && line[0] == 'F' && line[1] == ' ')
+	{
+		map->floor_color = get_color(line, map);
+		return (1);
+	}
+	if (map->ceilling_color == -1 && line[0] == 'C' && line[1] == ' ')
+	{
+		map->ceilling_color = get_color(line, map);
+		return (1);
+	}
+	return (0);
+}
+
 // Function that gets textures and colors
 
 static int	check_line(t_map *map, char *line)
 {
-	if (map->floor_color == -1 && line[0] == 'F' && line[1] == ' ')
-		map->floor_color = get_color(line, map);
-	else if (map->ceilling_color == -1 && line[0] == 'C' && line[1] == ' ')
-		map->ceilling_color = get_color(line, map);
+	if (get_colors(map, line))
+		return (1);
 	else if (map->north_texture == NULL
 		&& line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
 		map->north_texture = get_texture(map, line);
@@ -48,9 +61,13 @@ static int	check_line(t_map *map, char *line)
 	else if (map->east_texture == NULL
 		&& line[0] == 'E' && line[1] == 'A' && line[2] == ' ')
 		map->east_texture = get_texture(map, line);
+	else if (map->door_texture == NULL
+		&& line[0] == 'D' && line[1] == ' ')
+		map->door_texture = get_texture(map, line);
 	else if (map->ceilling_color != -1 && map->floor_color != -1
 		&& map->east_texture && map->north_texture
-		&& map->south_texture && map->west_texture && check_first_line(line))
+		&& map->south_texture && map->west_texture
+		&& map->door_texture && check_first_line(line))
 		return (0);
 	else
 		puterr(LINE_UNEXPECTED, NULL, map);
@@ -61,7 +78,8 @@ static int	check_all_set(t_map *map, char *str, t_node *head)
 {
 	if (map->ceilling_color != -1 && map->floor_color != -1
 		&& map->east_texture && map->north_texture
-		&& map->south_texture && map->west_texture && check_first_line(str))
+		&& map->south_texture && map->west_texture
+		&& map->door_texture && check_first_line(str))
 		return (1);
 	head->data = ft_strtrim_free(str, " \t");
 	if (!head->data)

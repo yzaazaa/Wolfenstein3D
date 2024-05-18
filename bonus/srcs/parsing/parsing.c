@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:41:53 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 16:53:17 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:27:46 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,32 @@ static void	init_map(t_map *map)
 	map->south_texture = NULL;
 	map->west_texture = NULL;
 	map->east_texture = NULL;
+	map->door_texture = NULL;
 	map->ceilling_color = -1;
 	map->floor_color = -1;
 	map->row = -1;
 	map->col = -1;
 	map->player.x = -1;
 	map->player.y = -1;
+}
+
+static int	get_line_check(char c, char c1)
+{
+	if (c == 'F')
+		return (1);
+	else if (c == 'C')
+		return (1);
+	else if (c == 'N' && c1 == 'O')
+		return (1);
+	else if (c == 'W' && c1 == 'E')
+		return (1);
+	else if (c == 'S' && c1 == 'O')
+		return (1);
+	else if (c == 'E' && c1 == 'A')
+		return (1);
+	else if (c == 'D')
+		return (1);
+	return (0);
 }
 
 // Function that removes all info lines from the .cub file
@@ -43,18 +63,7 @@ static void	remove_info_lines(t_list *raw_map)
 	{
 		check = 0;
 		line = current->data;
-		if (line[0] == 'F')
-			check = 1;
-		else if (line[0] == 'C')
-			check = 1;
-		else if (line[0] == 'N' && line[1] == 'O')
-			check = 1;
-		else if (line[0] == 'W' && line[1] == 'E')
-			check = 1;
-		else if (line[0] == 'S' && line[1] == 'O')
-			check = 1;
-		else if (line[0] == 'E' && line[1] == 'A')
-			check = 1;
+		check = get_line_check(line[0], line[1]);
 		current = current->next;
 		if (check == 1 && current)
 			remove_node_list(raw_map, current->prev);

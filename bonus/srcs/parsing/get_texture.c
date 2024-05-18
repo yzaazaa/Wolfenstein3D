@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 16:53:15 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:17:22 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*get_texture(t_map *map, char *line)
 	while (!(line[i] > ' ' && line[i] < 127))
 		i++;
 	len = 0;
-	while (line[i + len] > ' ' && line[i + len] < 127)
+	while (line[i + len])
 		len++;
 	texture = malloc(len + 1);
 	if (!texture)

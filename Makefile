@@ -22,7 +22,7 @@ COMP = cc
 
 MLX = -lmlx -framework OpenGL -framework AppKit
 
-CFLAGS = -Wall -Wextra -Werror -I includes -ggdb3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -O3 -mavx2 -flto -I includes #-ggdb3 -fsanitize=address
 
 all : $(NAME)
 
@@ -31,13 +31,13 @@ all : $(NAME)
 
 $(NAME) : $(OBJS) $(GNL)
 	@echo "Compiling mandatory ..."
-	@$(COMP) $(MLX) -ggdb3 -fsanitize=address -I includes $(OBJS) $(GNL) -o $(NAME)
+	@$(COMP) $(MLX)  -I includes $(OBJS) $(GNL) -o $(NAME)
 
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) : $(OBJS_BONUS) $(GNL)
 	@echo "Compiling bonus ..."
-	@$(COMP) $(MLX) -I includes -ggdb3 -fsanitize=address $(OBJS_BONUS) $(GNL) -o $(NAME_BONUS)
+	@$(COMP) $(MLX) $(CFLAGS) $(OBJS_BONUS) $(GNL) -o $(NAME_BONUS)
 
 $(GNL) : $(GNL_HEADER)
 	@$(MAKE) -C gnl/

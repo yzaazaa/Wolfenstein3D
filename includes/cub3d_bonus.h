@@ -6,7 +6,7 @@
 /*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 21:51:08 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 13:12:42 by Razog            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,12 @@
 # define TILE_SIZE 8
 # define MINI_MAP_SIZE 16
 # define MOUSE_SENSITIVITY 1
-# define SCREEN_H 1024
-# define SCREEN_W 1024
+# define SCREEN_H 1000
+# define SCREEN_W 1000
+# define SPRITE1 "sprites/shoot1.xpm"
+# define SPRITE2 "sprites/shoot2.xpm"
+# define SPRITE3 "sprites/shoot3.xpm"
+# define SPRITE4 "sprites/shoot4.xpm"
 
 /* ---- Init Functions ---- */
 void	init_maps(t_map *map);
@@ -80,5 +84,6 @@ void	put_pixel(t_datas *game, int x, int y, int color);
 void	draw_mini_map(t_datas *game);
 void	draw_crosshair(t_datas *game);
 void	draw_gun(t_datas *game);
+void	put_string_door(t_datas *game);
 
 #endif
