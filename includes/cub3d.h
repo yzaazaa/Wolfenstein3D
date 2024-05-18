@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 17:28:01 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/18 20:16:16 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # define ESC_KEY 53
 # define WIN_CLOSE 17
 # define TEX_SIZE 64
-# define SCREEN_H 1024
-# define SCREEN_W 1024
+# define SCREEN_H 1080
+# define SCREEN_W 1920
 
 /* ---- init ---- */
 void	init_game(t_datas *game);
