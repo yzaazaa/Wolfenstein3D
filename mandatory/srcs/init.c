@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 20:46:07 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 17:21:00 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,16 @@ void	init_game(t_datas *game)
 		puterr(MLX_IMAGE_DATA_ERR, game, NULL);
 }
 
-void	_start_game(t_datas *game)
+void	ft_new_window(t_datas *game)
+{
+	game->mlx_win = mlx_new_window(game->mlx,
+			game->screen_w, game->screen_h, "cub3D");
+	if (!game->mlx_win)
+		puterr(MLX_WINDOW_ERR, game, NULL);
+	mlx_hook(game->mlx_win, WIN_CLOSE, 0, ft_close_win, game);
+}
+
+static void	_start_game(t_datas *game)
 {
 	if (game->map->spawn_orientation == 'E')
 	{
@@ -57,8 +66,8 @@ void	start_game(t_datas *game)
 	game->movespeed = 0.1;
 	game->x_plane = 0.0;
 	game->y_plane = 0.66;
-	game->pos_x = game->map->player.x;
-	game->pos_y = game->map->player.y;
+	game->pos_x = game->map->player.x + 0.5;
+	game->pos_y = game->map->player.y + 0.5;
 	if (game->map->spawn_orientation == 'N')
 	{
 		game->x_dir = -1.0;

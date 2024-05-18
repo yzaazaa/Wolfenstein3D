@@ -1,28 +1,28 @@
-SRCS = $(addprefix mandatory/, main.c srcs/list/list.c srcs/list/list2.c srcs/parsing/check_file_name.c srcs/parsing/check_map.c srcs/parsing/get_color.c srcs/parsing/get_map_info.c srcs/parsing/get_raw_map.c srcs/parsing/get_texture.c srcs/parsing/parsing.c srcs/raycasting/cub3d.c srcs/raycasting/draw.c srcs/raycasting/init.c srcs/raycasting/key_hooks.c srcs/raycasting/raycast.c srcs/raycasting/player_moves.c srcs/utils/free_array.c srcs/utils/ft_atoi.c srcs/utils/ft_isdigit.c srcs/utils/ft_memcpy.c srcs/utils/ft_memset.c srcs/utils/ft_strchr.c srcs/utils/ft_strcmp.c srcs/utils/ft_strdup.c srcs/utils/ft_strlcpy.c srcs/utils/ft_strlen.c srcs/utils/ft_strtrim.c srcs/utils/ft_substr.c srcs/utils/get_color.c srcs/utils/is_empty_line.c srcs/utils/puterr.c srcs/parsing/utils/fill_spaces.c srcs/parsing/utils/free_map.c srcs/parsing/utils/is_player_spawn.c srcs/raycasting/crosshair.c)
+SRCS = $(addprefix mandatory/srcs/, init.c main.c drawing/draw.c drawing/put_pixel.c drawing/textures.c events/key_hooks.c events/player_moves.c list/list.c list/list2.c parsing/check_file_name.c parsing/check_map.c parsing/get_map_info.c parsing/get_raw_map.c parsing/get_texture.c parsing/get_color.c parsing/parsing.c raycasting/raycast.c utils/free_array.c utils/ft_atoi.c utils/ft_isdigit.c utils/ft_memcpy.c utils/ft_memset.c utils/ft_strchr.c utils/ft_strcmp.c utils/ft_strdup.c utils/ft_strlcpy.c utils/ft_strlen.c utils/ft_strtrim.c utils/ft_substr.c utils/is_empty_line.c utils/puterr.c parsing/utils/fill_spaces.c parsing/utils/free_map.c parsing/utils/is_player_spawn.c)
 
-HEADERS = includes/error.h includes/parsing.h includes/cub3d.h
+HEADERS = $(addprefix includes/, error.h parsing.h cub3d.h)
 
-SRCS_BONUS = $(addprefix bonus/, main.c srcs/list/list.c srcs/list/list2.c srcs/parsing/check_file_name.c srcs/parsing/check_map.c srcs/parsing/get_color.c srcs/parsing/get_map_info.c srcs/parsing/get_raw_map.c srcs/parsing/get_texture.c srcs/parsing/parsing.c srcs/raycasting/cub3d.c srcs/raycasting/draw.c srcs/raycasting/init.c srcs/raycasting/key_hooks.c srcs/raycasting/raycast.c srcs/raycasting/player_moves.c srcs/utils/free_array.c srcs/utils/ft_atoi.c srcs/utils/ft_isdigit.c srcs/utils/ft_memcpy.c srcs/utils/ft_memset.c srcs/utils/ft_strchr.c srcs/utils/ft_strcmp.c srcs/utils/ft_strdup.c srcs/utils/ft_strlcpy.c srcs/utils/ft_strlen.c srcs/utils/ft_strtrim.c srcs/utils/ft_substr.c srcs/utils/get_color.c srcs/utils/is_empty_line.c srcs/utils/puterr.c srcs/parsing/utils/fill_spaces.c srcs/parsing/utils/free_map.c srcs/parsing/utils/is_player_spawn.c srcs/mini_map/mini_map.c srcs/raycasting/crosshair.c srcs/raycasting/open_door.c srcs/raycasting/gun.c)
+SRCS_BONUS = $(addprefix bonus/srcs/, init.c main.c door/open_door.c drawing/crosshair.c drawing/draw.c drawing/put_pixel.c drawing/textures.c events/key_hooks.c events/mouse.c events/player_moves.c gun/gun.c list/list.c list/list2.c mini_map/mini_map.c parsing/check_file_name.c parsing/check_map.c parsing/get_color.c parsing/get_map_info.c parsing/get_raw_map.c parsing/get_texture.c parsing/parsing.c raycasting/raycast.c utils/free_array.c utils/ft_atoi.c utils/ft_isdigit.c utils/ft_memcpy.c utils/ft_memset.c utils/ft_strchr.c utils/ft_strcmp.c utils/ft_strdup.c utils/ft_strlcpy.c utils/ft_strlen.c utils/ft_strtrim.c utils/ft_substr.c utils/is_empty_line.c utils/puterr.c parsing/utils/fill_spaces.c parsing/utils/free_map.c parsing/utils/is_player_spawn.c)
 
-HEADERS_BONUS = includes/error_bonus.h includes/parsing_bonus.h includes/cub3d_bonus.h
+HEADERS_BONUS = $(addprefix includes/, error_bonus.h parsing_bonus.h cub3d_bonus.h)
 
-GNL_HEADER = gnl/get_next_line.h
+GNL_HEADER = $(addprefix gnl/, get_next_line.h)
 
-GNL = gnl/gnl.a
+GNL = $(addprefix gnl/, gnl.a)
 
 OBJS = ${SRCS:.c=.o}
 
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
-NAME = cub3d
+NAME = cub3D
 
-NAME_BONUS = cub3d_bonus
+NAME_BONUS = cub3D_bonus
 
 COMP = cc
 
 MLX = -lmlx -framework OpenGL -framework AppKit
 
-CFLAGS = -Wall -Wextra -Werror -O3 -mavx2 -flto -I includes #-ggdb3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -O3 -mavx2 -flto -I includes -g3
 
 all : $(NAME)
 
@@ -31,7 +31,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJS) $(GNL)
 	@echo "Compiling mandatory ..."
-	@$(COMP) $(MLX)  -I includes $(OBJS) $(GNL) -o $(NAME)
+	@$(COMP) $(MLX) $(CFLAGS) -I includes $(OBJS) $(GNL) -o $(NAME)
 
 bonus : $(NAME_BONUS)
 

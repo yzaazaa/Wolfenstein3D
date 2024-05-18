@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 13:14:55 by Razog            ###   ########.fr       */
+/*   Created: 2024/05/18 17:10:11 by yzaazaa           #+#    #+#             */
+/*   Updated: 2024/05/18 17:10:14 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static void	draw_wall(t_datas *game, int *i)
 {
-	if (game->side == 0 && game->x_raydir > 0)
+	if (game->door == 1)
+		put_pixel(game, game->x,
+			(*i)++,
+			game->textures.door.pixels[game->tex_y * TEX_SIZE + game->tex_x]);
+	else if (game->side == 0 && game->x_raydir > 0)
 		put_pixel(game, game->x,
 			(*i)++,
 			game->textures.south.pixels[game->tex_y * TEX_SIZE + game->tex_x]);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 01:16:13 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 15:44:02 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 17:16:09 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strtrim_free(char const *s1, char const *set)
 	char	*trimmed;
 	int		i;
 	int		start;
-	int		len_trimmed;
 
 	if (!s1 || !set)
 		return (NULL);
@@ -27,11 +26,7 @@ char	*ft_strtrim_free(char const *s1, char const *set)
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	start = i;
-	i = ft_strlen(s1) - 1;
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i--;
-	len_trimmed = i - start + 1;
-	trimmed = ft_substr(s1, start, len_trimmed);
+	trimmed = ft_substr(s1, start, ft_strlen(s1));
 	if (!trimmed)
 		return (NULL);
 	free((void *)s1);

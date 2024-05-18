@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:54:55 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 16:59:17 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 17:14:33 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	moves(t_datas *game)
 	else if (game->move_up == 1)
 		move_forword(game);
 	else if (game->move_down == 1)
-		move_backword(game);
+		move_backward(game);
 	else if (game->move_right == 1)
 		move_right(game);
 	else if (game->move_left == 1)

@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   crosshair.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 15:57:00 by Razog             #+#    #+#             */
-/*   Updated: 2024/05/17 16:03:53 by Razog            ###   ########.fr       */
+/*   Created: 2024/05/18 17:10:05 by yzaazaa           #+#    #+#             */
+/*   Updated: 2024/05/18 17:10:07 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
-void	put_pixel(t_datas *game, int x, int y, int color)
-{
-	if (x < 0 || x >= game->screen_w || y < 0 || y >= game->screen_h)
-		return ;
-	game->image.pixels[y * game->screen_w + x] = color;
-}
+#include "cub3d_bonus.h"
 
 static void	circle_help(t_datas *game, t_point center, t_point pixel, int color)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   player_moves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 01:09:07 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/17 16:53:55 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 17:14:39 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d_bonus.h"
+#include "cub3d.h"
 
 void	move_forword(t_datas *game)
 {
@@ -26,7 +26,7 @@ void	move_forword(t_datas *game)
 		game->pos_x += game->x_dir * game->movespeed;
 }
 
-void	move_backword(t_datas *game)
+void	move_backward(t_datas *game)
 {
 	int	x;
 	int	y;

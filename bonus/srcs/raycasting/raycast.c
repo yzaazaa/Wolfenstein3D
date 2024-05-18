@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 13:14:38 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/18 17:09:38 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
 //calculate step and initial sideDist
-void	calc_side_dist_step(t_datas *data)
+static void	calc_side_dist_step(t_datas *data)
 {
 	if (data->x_raydir < 0)
 	{
@@ -99,32 +99,4 @@ void	calc_wall_height(t_datas *data)
 	data->draw_end = data->line_height / 2 + data->screen_h / 2;
 	if (data->draw_end >= data->screen_h)
 		data->draw_end = data->screen_h - 1;
-}
-
-int	launch_game(void *ptr)
-{
-	t_datas	*game;
-
-	game = ptr;
-	mlx_destroy_image(game->mlx, game->image.ptr);
-	game->image.ptr = mlx_new_image(game->mlx, game->screen_w, game->screen_h);
-	if (!game->image.ptr)
-		puterr(MLX_IMAGE_ERR, game, NULL);
-	game->image.pixels = (int *)mlx_get_data_addr(game->image.ptr,
-			&(game->image.bpp),
-			&(game->image.line_len), &(game->image.endian));
-	if (!game->image.pixels)
-		puterr(MLX_IMAGE_DATA_ERR, game, NULL);
-	if (game->sprite_index > 0)
-		game->sprite_index++;
-	if (game->sprite_index > 20)
-		game->sprite_index = 0;
-	moves(game);
-	drawing(game);
-	draw_mini_map(game);
-	draw_crosshair(game);
-	mlx_put_image_to_window(game->mlx, game->mlx_win, game->image.ptr, 0, 0);
-	put_string_door(game);
-	draw_gun(game);
-	return (0);
 }

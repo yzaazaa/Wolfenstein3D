@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   put_pixel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 17:12:09 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:12:11 by yzaazaa          ###   ########.fr       */
+/*   Created: 2024/05/18 17:10:17 by yzaazaa           #+#    #+#             */
+/*   Updated: 2024/05/18 17:10:18 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing_bonus.h"
+#include "cub3d_bonus.h"
 
-void	free_map(t_map *map)
+void	put_pixel(t_datas *game, int x, int y, int color)
 {
-	if (map->north_texture)
-		free(map->north_texture);
-	if (map->south_texture)
-		free(map->south_texture);
-	if (map->east_texture)
-		free(map->east_texture);
-	if (map->west_texture)
-		free(map->west_texture);
-	if (map->map_content)
-		free_list(&map->map_content);
-	if (map->map2d)
-		free_array(map->map2d);
-	map = NULL;
+	if (x < 0 || x >= game->screen_w || y < 0 || y >= game->screen_h)
+		return ;
+	game->image.pixels[y * game->screen_w + x] = color;
 }
