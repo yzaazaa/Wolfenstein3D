@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 01:14:08 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 20:16:16 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/18 21:47:29 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define CUB3D_H
 
 # include <mlx.h>
-# include "parsing_bonus.h"
+# include "parsing.h"
 # include <math.h>
-# include "structs_bonus.h"
+# include "structs.h"
 
 # define RIGHT_M 2
 # define LEFT_M 0

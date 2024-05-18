@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:50 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:28:12 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/18 21:47:35 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include <stdio.h>
 # include <limits.h>
-# include "error_bonus.h"
+# include "error.h"
 # include "../gnl/get_next_line.h"
 # include <fcntl.h>
-# include "structs_bonus.h"
+# include "structs.h"
 
 /*		utils		*/
 

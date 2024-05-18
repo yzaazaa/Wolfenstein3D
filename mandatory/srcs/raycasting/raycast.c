@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 17:15:20 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/18 21:47:46 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	init_ray_distance(t_datas *data)
 	data->delta_y_dist = sqrt(1 + pow(data->x_raydir, 2) \
 		/ pow(data->y_raydir, 2));
 	data->hit_wall = 0;
-	data->door = 0;
 	calc_side_dist_step(data);
 }
 
