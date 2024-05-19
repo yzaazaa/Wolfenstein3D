@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:10:35 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:10:37 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/19 16:24:58 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ int	ft_mouse(int x, int y, t_datas *vars)
 	(void)y;
 	if (x != prev_x)
 	{
-		diff = (prev_x != -1) * ((x - prev_x) > 0);
-		diff = (diff * 2) - 1;
-		rotate(vars, (-diff * vars->rote_angle) * MOUSE_SENSITIVITY);
+		diff = abs(prev_x - x);
+		if (x > prev_x)
+			while (diff--)
+				rotate(vars, -vars->rote_angle * MOUSE_SENSITIVITY / 10);
+		else
+			while (diff--)
+				rotate(vars, vars->rote_angle * MOUSE_SENSITIVITY / 10);
 	}
 	prev_x = x;
 	return (0);
