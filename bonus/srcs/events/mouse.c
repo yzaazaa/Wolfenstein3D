@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:10:35 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/19 16:24:58 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/19 16:40:39 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_mouse(int x, int y, t_datas *vars)
 {
 	static int	prev_x = -1;
-	int			diff;
+	int	diff;
 
 	(void)y;
-	if (x != prev_x)
+	if (x != prev_x && prev_x != -1)
 	{
 		diff = abs(prev_x - x);
 		if (x > prev_x)
