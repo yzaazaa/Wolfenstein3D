@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 17:13:47 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/19 16:08:01 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	_start_game(t_datas *game)
 
 void	start_game(t_datas *game)
 {
-	game->rote_angle = 0.1;
+	game->rote_angle = 0.05;
 	game->movespeed = 0.1;
 	game->x_plane = 0.0;
 	game->y_plane = 0.66;
