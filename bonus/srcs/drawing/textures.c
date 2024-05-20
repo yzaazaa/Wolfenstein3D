@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:10:22 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 21:12:51 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/20 14:17:46 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	load_textures(t_datas *game)
 	load_texture(game, game->map->south_texture, &game->textures.south, t);
 	load_texture(game, game->map->east_texture, &game->textures.east, t);
 	load_texture(game, game->map->west_texture, &game->textures.west, t);
-	load_texture(game, game->map->door_texture, &game->textures.door, t);
+	if (game->map->door_texture)
+		load_texture(game, game->map->door_texture, &game->textures.door, t);
 	load_sprite(game, SPRITE1, &game->shoot1, 500);
 	load_sprite(game, SPRITE2, &game->shoot2, 500);
 	load_sprite(game, SPRITE3, &game->shoot3, 500);

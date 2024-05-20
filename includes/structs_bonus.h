@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:28:21 by Razog             #+#    #+#             */
-/*   Updated: 2024/05/19 16:40:44 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/20 14:21:57 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ typedef struct s_list
 	int		size;
 }				t_list;
 
-typedef struct s_vector
+typedef struct s_point
 {
 	int	x;
 	int	y;
-}				t_vector;
+}				t_point;
 
 typedef struct s_map
 {
@@ -45,7 +45,7 @@ typedef struct s_map
 	char				*door_texture;
 	int					row;
 	int					col;
-	t_vector			player;
+	t_point				player;
 	int					floor_color;
 	int					ceilling_color;
 }				t_map;
@@ -67,12 +67,6 @@ typedef struct s_textures
 	t_image	west;
 	t_image	door;
 }				t_textures;
-
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}				t_point;
 
 typedef struct s_datas
 {

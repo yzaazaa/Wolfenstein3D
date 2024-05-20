@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 06:25:44 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/17 16:58:43 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/20 14:16:21 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@
 # define MLX_IMAGE_ERR "Failed to create new image!\n"
 # define MLX_IMAGE_DATA_ERR "Failed to get image data!\n"
 # define CONVERT_XPM_ERR "Couldn't convert xpm file to image!\n"
+# define NO_DOOR_TEXTURE "Couldn't find the path to the door texture!\n"
 
 #endif

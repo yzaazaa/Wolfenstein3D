@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:11:54 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:11:56 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/20 14:16:36 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static void	check_line(t_map *map, char *line, char *next_line, char *prev_line)
 	i = -1;
 	while (line[++i])
 	{
+		if (line[i] == 'D' && !map->door_texture)
+			puterr(NO_DOOR_TEXTURE, NULL, map);
 		if ((line[i] == '0' || line[i] == 'D' || is_player_spawn(line[i]))
 			&& (i == 0 || line[i - 1] == ' '))
 			puterr(LEFT_EDGE, NULL, map);

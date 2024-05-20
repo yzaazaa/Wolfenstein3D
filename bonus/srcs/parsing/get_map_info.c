@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:11:42 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:11:45 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/20 14:14:43 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static int	check_line(t_map *map, char *line)
 	else if (map->ceilling_color != -1 && map->floor_color != -1
 		&& map->east_texture && map->north_texture
 		&& map->south_texture && map->west_texture
-		&& map->door_texture && check_first_line(line))
+		&& check_first_line(line))
 		return (0);
 	else
 		puterr(LINE_UNEXPECTED, NULL, map);

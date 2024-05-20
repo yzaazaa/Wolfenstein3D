@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Razog <yassine.zaaaza@outlook.com>         +#+  +:+       +#+        */
+/*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:28:21 by Razog             #+#    #+#             */
-/*   Updated: 2024/05/18 12:39:43 by Razog            ###   ########.fr       */
+/*   Updated: 2024/05/20 14:21:40 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ typedef struct s_list
 	int		size;
 }				t_list;
 
-typedef struct s_vector
+typedef struct s_point
 {
 	int	x;
 	int	y;
-}				t_vector;
+}				t_point;
 
 typedef struct s_map
 {
@@ -44,7 +44,7 @@ typedef struct s_map
 	char				*east_texture;
 	int					row;
 	int					col;
-	t_vector			player;
+	t_point				player;
 	int					floor_color;
 	int					ceilling_color;
 }				t_map;
@@ -65,12 +65,6 @@ typedef struct s_textures
 	t_image	east;
 	t_image	west;
 }				t_textures;
-
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}				t_point;
 
 typedef struct s_datas
 {
