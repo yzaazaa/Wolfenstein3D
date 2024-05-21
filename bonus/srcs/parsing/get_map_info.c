@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:11:42 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/20 14:14:43 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/21 11:18:34 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static int	check_all_set(t_map *map, char *str, t_node *head)
 	if (map->ceilling_color != -1 && map->floor_color != -1
 		&& map->east_texture && map->north_texture
 		&& map->south_texture && map->west_texture
-		&& map->door_texture && check_first_line(str))
+		&& check_first_line(str))
 		return (1);
 	head->data = ft_strtrim_free(str, " \t");
 	if (!head->data)
