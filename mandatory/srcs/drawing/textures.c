@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:14:27 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:14:28 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:17:31 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	load_texture(t_datas *game, char *path, t_image *img)
 	int		height;
 
 	img->ptr = mlx_xpm_file_to_image(game->mlx, path, &height, &width);
-	if (!img->ptr || width != 64 || height != 64)
+	if (!img->ptr || width != TEX_SIZE || height != TEX_SIZE)
 		puterr(CONVERT_XPM_ERR, game, NULL);
 	img->pixels = (int *)mlx_get_data_addr(img->ptr,
 			&img->bpp, &img->line_len, &img->endian);

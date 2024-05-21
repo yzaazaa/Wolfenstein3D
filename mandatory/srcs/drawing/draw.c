@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:24:38 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 17:14:02 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:56:31 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	draw_floor_ceiling(t_datas *game)
 			/ 2 + game->line_height / 2) * game->step;
 	while (i < game->draw_end)
 	{
-		game->tex_y = (int)game->texpos & (TEX_SIZE - 1);
+		game->tex_y = (int)game->texpos % TEX_SIZE;
 		game->texpos += game->step;
 		draw_wall(game, &i);
 	}

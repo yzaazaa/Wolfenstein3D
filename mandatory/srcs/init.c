@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:32:12 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/19 16:07:39 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:18:00 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ void	start_game(t_datas *game)
 {
 	game->rote_angle = 0.05;
 	game->movespeed = 0.1;
-	game->x_plane = 0.0;
-	game->y_plane = 0.66;
 	game->pos_x = game->map->player.x + 0.5;
 	game->pos_y = game->map->player.y + 0.5;
 	if (game->map->spawn_orientation == 'N')
