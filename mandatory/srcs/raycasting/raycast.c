@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:01:27 by frukundo          #+#    #+#             */
-/*   Updated: 2024/05/18 21:47:46 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/22 12:29:00 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,5 @@ void	calc_wall_height(t_datas *data)
 		data->draw_start = 0;
 	data->draw_end = data->line_height / 2 + data->screen_h / 2;
 	if (data->draw_end >= data->screen_h)
-		data->draw_end = data->screen_h - 1;
+		data->draw_end = data->screen_h;
 }
