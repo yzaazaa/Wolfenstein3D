@@ -25,13 +25,13 @@ make bonus
 ## Running
 
 ```bash
-./cub3d path_to_map
+./cub3D path_to_map
 ```
 
 or
 
 ```bash
-./cub3d_bonus path_to_map
+./cub3D_bonus path_to_map
 ```
 
 ## Cleaning the folder from object files
