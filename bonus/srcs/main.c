@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:42:46 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/05/18 17:09:32 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/05/23 13:26:23 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ int	main(int ac, char **av)
 	ft_memset(&map, 0, sizeof(t_map));
 	if (ac != 2)
 		puterr(INVALID_ARG, NULL, NULL);
-	init_game(&game);
 	parse_map(&map, av[1]);
+	init_game(&game);
 	game.map = &map;
 	load_textures(&game);
 	start_game(&game);
