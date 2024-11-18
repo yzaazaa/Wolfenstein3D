@@ -1,4 +1,4 @@
-# WOLFEENSTEIN 3D
+# WOLFENSTEIN 3D
 
 The first fps 3d game.
 
